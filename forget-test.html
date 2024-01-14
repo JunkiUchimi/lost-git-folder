@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>クイズ</title>
+</head>
+<body>
+
+<h2>以下の質問に答えてね</h2>
+<h2>選択肢は、1.全くそう思わない、2.あまりそう思わない、3. どちらでもない、4.ややそう思う、5.とてもそう思うから選んでください。</h2>
+
+<form id="quiz-form">
+    <div>
+        <p>問題 1: ケアレスミスが多い</p>
+        <select id="answer1">
+            <option value="5">とてもそう思う</option>
+            <option value="4">ややそう思う</option>
+            <option value="3">どちらでもない</option>
+            <option value="2">あまりそう思わない</option>
+            <option value="1">全くそう思わない</option>
+        </select>
+    </div>
+    <div>
+        <p>問題 2: ものをしばしばなくす</p>
+        <select id="answer2">
+            <option value="5">とてもそう思う</option>
+            <option value="4">ややそう思う</option>
+            <option value="3">どちらでもない</option>
+            <option value="2">あまりそう思わない</option>
+            <option value="1">全くそう思わない</option>
+        </select>
+    </div>
+    <div>
+        <p>問題 3: 予定を忘れてしまう</p>
+        <select id="answer2">
+            <option value="5">とてもそう思う</option>
+            <option value="4">ややそう思う</option>
+            <option value="3">どちらでもない</option>
+            <option value="2">あまりそう思わない</option>
+            <option value="1">全くそう思わない</option>
+    </div>
+    <div>
+        <p>問題 4: 何かを考えるときは慎重に考える</p>
+        <select id="answer4">
+            <option value="1">とてもそう思う</option>
+            <option value="2">ややそう思う</option>
+            <option value="3">どちらでもない</option>
+            <option value="4">あまりそう思わない</option>
+            <option value="5">全くそう思わない</option>
+        </select>
+    </div>
+    <button type="button" onclick="calculateScore()">スコアを計算</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+// JavaScriptのコードはここに記述します
+function calculateScore() {
+    var totalScore = 0;
+
+    for (var i = 1; i <= 10; i++) {
+        var answerValue = document.getElementById('answer' + i).value;
+        totalScore += parseInt(answerValue, 10);
+    }
+
+    document.getElementById('result').textContent = 'あなたの合計スコア: ' + totalScore;
+}
+</script>
+
+</body>
+</html>
