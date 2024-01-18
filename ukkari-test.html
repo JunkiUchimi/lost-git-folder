@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>クイズ</title>
+        <style>
+
+            p {
+                font-size: 30px;
+                font-family: 'Indie Flower', cursive;
+                color: gray;
+                font-weight: bold;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center; /* 水平方向の中央寄せ */
+                align-items: center; /* 垂直方向の中央寄せ */
+                min-height: 100vh; /* ビューポートの高さに合わせる */
+            }
+
+            .radio-first {
+                transform: scale(3.0);
+                margin-right: 40px;
+                margin-left: 70px;
+            }
+
+            .radio-second {
+                transform: scale(2.3);
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .radio-third {
+                transform: scale(1.6);
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .radio-fourth {
+                transform: scale(2.3);
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+            
+            .radio-fifth {
+                transform: scale(3.0);
+                margin-right: 70px;
+                margin-left: 40px;
+            }
+
+            .label-green {
+                color: yellowgreen;
+                font-size: 30px;
+            }
+
+            .label-orange {
+                color: orange;
+                font-size: 30px;
+            }
+
+            .question {
+                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
+            }
+
+            h1 {
+                font-size: 50px;
+                color: white;
+                background-color: pink;
+                display: flex;
+                justify-content: center;
+	            align-items: center;
+            }
+
+            button {
+                background-color: #4CAF50; /* 緑色の背景 */
+                color: white; /* 白色のテキスト */
+                padding: 15px 32px; /* パディング */
+                text-align: center; /* テキストを中央揃え */
+                text-decoration: none; /* テキストの装飾を無効化 */
+                display: inline-block; /* インラインブロック要素として表示 */
+                font-size: 16px; /* フォントサイズ */
+                margin: 4px 2px; /* マージン */
+                cursor: pointer; /* カーソルをポインタに */
+                border: none; /* 枠線なし */
+                border-radius: 5px; /* 角を丸くする */
+                transition: background-color 0.3s; /* 背景色の変更にアニメーションを適用 */
+            }
+
+            button:hover {
+                background-color: #45a049; /* ホバー時の背景色 */
+            }
+
+            
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <form id="quiz-form">
+                <h1>うっかり度診断</h1><br><br><br><hr>
+                
+                <div id="question1" class="question">
+                    <p>ケアレスミスが多い</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer1" value="5" class="radio-first">
+                    <input type="radio" name="answer1" value="4" class="radio-second">
+                    <input type="radio" name="answer1" value="3" class="radio-third">
+                    <input type="radio" name="answer1" value="2" class="radio-fourth">
+                    <input type="radio" name="answer1" value="1" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr>
+            
+                
+                <div id="question2" class="question">
+                    <p>ものをしばしばなくす</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer2" value="5" class="radio-first">
+                    <input type="radio" name="answer2" value="4" class="radio-second">
+                    <input type="radio" name="answer2" value="3" class="radio-third">
+                    <input type="radio" name="answer2" value="2" class="radio-fourth">
+                    <input type="radio" name="answer2" value="1" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+            
+
+                
+                <div id="question3" class="question">
+                    <p>予定を忘れてしまう</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer3" value="5" class="radio-first">
+                    <input type="radio" name="answer3" value="4" class="radio-second">
+                    <input type="radio" name="answer3" value="3" class="radio-third">
+                    <input type="radio" name="answer3" value="2" class="radio-fourth">
+                    <input type="radio" name="answer3" value="1" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+                
+                
+                <div id="question4" class="question">
+                    <p>何かを決めるときは慎重に考える</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer4" value="1" class="radio-first">
+                    <input type="radio" name="answer4" value="2" class="radio-second">
+                    <input type="radio" name="answer4" value="3" class="radio-third">
+                    <input type="radio" name="answer4" value="4" class="radio-fourth">
+                    <input type="radio" name="answer4" value="5" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+
+                
+                <div id="question5" class="question">
+                    <p>何かをするときは計画を立てる</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer5" value="1" class="radio-first">
+                    <input type="radio" name="answer5" value="2" class="radio-second">
+                    <input type="radio" name="answer5" value="3" class="radio-third">
+                    <input type="radio" name="answer5" value="4" class="radio-fourth">
+                    <input type="radio" name="answer5" value="5" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+
+                
+                <div id="question6" class="question">
+                    <p>忘れ物をしないように確認をしている</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer6" value="1" class="radio-first">
+                    <input type="radio" name="answer6" value="2" class="radio-second">
+                    <input type="radio" name="answer6" value="3" class="radio-third">
+                    <input type="radio" name="answer6" value="4" class="radio-fourth">
+                    <input type="radio" name="answer6" value="5" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+
+                
+                <div id="question7" class="question">
+                    <p>失敗をしたときは対策を立てる</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer7" value="1" class="radio-first">
+                    <input type="radio" name="answer7" value="2" class="radio-second">
+                    <input type="radio" name="answer7" value="3" class="radio-third">
+                    <input type="radio" name="answer7" value="4" class="radio-fourth">
+                    <input type="radio" name="answer7" value="5" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+
+                
+                <div id="question8" class="question">
+                    <p>心に余裕をもたせるようにしている</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer8" value="1" class="radio-first">
+                    <input type="radio" name="answer8" value="2" class="radio-second">
+                    <input type="radio" name="answer8" value="3" class="radio-third">
+                    <input type="radio" name="answer8" value="4" class="radio-fourth">
+                    <input type="radio" name="answer8" value="5" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+                
+                
+                <div id="question9" class="question">
+                    <p>何かをするときは優先順位をつける</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer9" value="1" class="radio-first">
+                    <input type="radio" name="answer9" value="2" class="radio-second">
+                    <input type="radio" name="answer9" value="3" class="radio-third">
+                    <input type="radio" name="answer9" value="4" class="radio-fourth">
+                    <input type="radio" name="answer9" value="5" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+
+                
+                <div id="question10" class="question">
+                    <p>時間に余裕のある行動を意識している</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer10" value="1" class="radio-first">
+                    <input type="radio" name="answer10" value="2" class="radio-second">
+                    <input type="radio" name="answer10" value="3" class="radio-third">
+                    <input type="radio" name="answer10" value="4" class="radio-fourth">
+                    <input type="radio" name="answer10" value="5" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
+                <div id="result"></div>
+                <button type="button" onclick="calculateScore()">次のページへ</button>
+            </form>
+
+        </div>
+
+        <script>
+
+        function calculateScore() {
+        var ukkariScore = 0;
+
+        for (var number = 1; number <= 10; number++) {
+            var radios = document.getElementsByName('answer' + number);
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    ukkariScore += parseInt(radios[i].value, 10);
+                    break;
+                }
+            }
+        }
+
+        localStorage.setItem('ukkariScore', ukkariScore);
+        document.getElementById('result').textContent = '次のページへ';
+        window.location.href = 'komarido-test.html';
+        }
+
+        document.querySelectorAll('.question').forEach(function(question, index) {
+            // 各質問の全てのラジオボタンを取得
+            var radioButtons = question.querySelectorAll('input[type=radio]');
+
+            // 各ラジオボタンにイベントリスナーを追加
+            radioButtons.forEach(function(radio) {
+                radio.addEventListener('click', function() {
+                    // 次の質問へのIDを計算
+                    var nextQuestionId = 'question' + (index + 2);
+                    var nextQuestion = document.getElementById(nextQuestionId);
+                    // 次の質問が存在する場合はスクロール
+                    if (nextQuestion) {
+                        nextQuestion.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+
+        
+        
+        </script>
+       
+    </body>
+</html>

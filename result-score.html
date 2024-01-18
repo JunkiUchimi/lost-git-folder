@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>数値の表示</title>
+        <meta charset="UTF-8">
+        <style>
+            .container {
+                    display: flex;
+                    justify-content: center; /* 水平方向の中央寄せ */
+                    align-items: center; /* 垂直方向の中央寄せ */
+                    min-height: 100vh; /* ビューポートの高さに合わせる */
+            }
+
+            .container > div {
+                margin-bottom: 10px; /* 10pxのマージンを追加 */
+            }
+
+            #ukkariDisplay, #komaridoDisplay, #totalScoreDisplay {
+                display: block; /* ブロックレベル要素として表示 */
+                margin-bottom: 10px; /* 下部にマージンを追加 */
+            }
+
+            .speech-bubble {
+                position: relative;
+                background: #f0f0f0;
+                border-radius: 10px;
+                padding: 10px;
+                text-align: center;
+                width: 200px; /* 吹き出しの幅 */
+                margin: 20px; /* 余白 */
+            }
+
+            /* 吹き出しのしっぽ部分 */
+            .speech-bubble:after {
+                content: '';
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -10px;
+                border-width: 10px;
+                border-style: solid;
+                border-color: transparent transparent #f0f0f0 transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">  
+            <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
+            <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
+            <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
+        </div>
+        <p>動物の画像など</p>
+        <div class="speech-bubble">ダチョウはとっても忘れやすい生き物だけど、強靭な身体能力を持っているよ。</div>
+    </body>
+    </body>
+    <script>
+        window.onload = function() {
+        // ローカルストレージから数値を個別に取得
+        var ukkari = localStorage.getItem('ukkariScore');
+        var komarido = localStorage.getItem('komaridoScore');
+
+        // 数値に変換（もし文字列なら）
+        var ukkariScore = parseInt(ukkari, 10);
+        var komaridoScore = parseInt(komarido, 10);
+
+        var totalScore = 0;
+
+        // スコアが存在するかチェック
+        if (ukkari !== null) {
+            document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkari;
+        } else {
+            document.getElementById('ukkariDisplay').textContent = 'うっかり度のスコアは保存されていません。';
+        }
+
+        // こまり度を表示
+        if (komarido !== null) {
+            document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komarido;
+        } else {
+            document.getElementById('komaridoDisplay').textContent = 'こまり度のスコアは保存されていません。';
+        }
+
+        if (!isNaN(ukkariScore)) {
+            totalScore += ukkariScore;
+        }
+
+        if (!isNaN(komaridoScore)) {
+            totalScore += komaridoScore;
+        }
+
+        // 総合スコアを表示
+        document.getElementById('totalScoreDisplay').textContent = '総合スコア: ' + totalScore;
+        };
+    </script>
+</html>
