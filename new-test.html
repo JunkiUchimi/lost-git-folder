@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <style>
+
+            p {
+                font-size: 30px;
+                font-family: 'Indie Flower', cursive;
+                color: gray;
+                font-weight: bold;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center; /* 水平方向の中央寄せ */
+                align-items: center; /* 垂直方向の中央寄せ */
+                min-height: 100vh; /* ビューポートの高さに合わせる */
+            }
+
+            .radio-first {
+                transform: scale(3.0);
+                margin-right: 40px;
+                margin-left: 70px;
+            }
+
+            .radio-second {
+                transform: scale(2.3);
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .radio-third {
+                transform: scale(1.6);
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .radio-fourth {
+                transform: scale(2.3);
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+            
+            .radio-fifth {
+                transform: scale(3.0);
+                margin-right: 70px;
+                margin-left: 40px;
+            }
+
+            .label-green {
+                color: yellowgreen;
+                font-size: 30px;
+            }
+
+            .label-orange {
+                color: orange;
+                font-size: 30px;
+            }
+
+            .radio-button {
+                font-size: 20px;
+            }
+
+            .result-button {
+                font-size: 20px; /* フォントサイズを大きくする */
+                padding: 15px 30px; /* 上下左右のパディングを追加 */
+                cursor: pointer;
+            }
+
+            h1 {
+                font-size: 50px;
+                color: white;
+                display: flex;
+                justify-content: center;
+	            align-items: center;
+                background-color: rgb(111, 111, 175);
+            }
+
+            button {
+                background-color: #4CAF50; /* 緑色の背景 */
+                color: white; /* 白色のテキスト */
+                padding: 15px 32px; /* パディング */
+                text-align: center; /* テキストを中央揃え */
+                text-decoration: none; /* テキストの装飾を無効化 */
+                display: inline-block; /* インラインブロック要素として表示 */
+                font-size: 16px; /* フォントサイズ */
+                margin: 4px 2px; /* マージン */
+                cursor: pointer; /* カーソルをポインタに */
+                border: none; /* 枠線なし */
+                border-radius: 5px; /* 角を丸くする */
+                transition: background-color 0.3s; /* 背景色の変更にアニメーションを適用 */
+            }
+
+            button:hover {
+                background-color: #45a049; /* ホバー時の背景色 */
+            }
+
+            .question {
+                width: 80%; /* 要素の幅を画面幅の80%に設定 */
+                margin: 0 auto; /* 左右のマージンを自動に設定して中央揃え */
+                text-align: center; /* テキストを中央揃え */
+                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
+            }
+
+           .question11 {
+                width: 80%; /* 要素の幅を画面幅の80%に設定 */
+                margin: 0 auto; /* 左右のマージンを自動に設定して中央揃え */
+                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
+                font-size: 20px;
+           }
+
+           p.question11 {
+                width: 80%; /* 要素の幅を画面幅の80%に設定 */
+                margin: 0 auto; /* 左右のマージンを自動に設定して中央揃え */
+                text-align: center; /* テキストを中央揃え */
+                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
+           }
+
+           .radio-button {
+            font-size: 30px;
+            color: gray;
+            
+           }
+
+           .question11 input[type="radio"] {
+                transform: scale(2); /* ラジオボタンを2倍の大きさにスケールアップ */
+            }
+
+            label {
+                font-size: 24px; /* または希望のサイズに調整 */
+            }
+            
+        </style>
+    </head>
+   
+    <body>
+        <div class="container">
+            <form id="quiz-form">
+                <h1>行動診断</h1><br><br><br><hr>
+    
+                <div id="main-question">
+                    <p>あなたの日常でよくあることについて上位5つ教えてください。</p>
+                    <input type="checkbox" id="option1" name="option" value="option1"><label for="option1">雨の日に傘を持っていく</label><br>
+                        <input type="checkbox" id="option2" name="option" value="option2"><label for="option2">カードタイプの定期券を持っていく</label><br>
+                        <input type="checkbox" id="option3" name="option" value="option3"><label for="option3">外出先に弁当や水筒を持っていく</label><br>
+                        <input type="checkbox" id="option4" name="option" value="option4"><label for="option4">友人と会う予定を立てる</label><br>
+                        <input type="checkbox" id="option5" name="option" value="option5"><label for="option5">図書館で本を借りる</label><br>
+                        <input type="checkbox" id="option6" name="option" value="option6"><label for="option6">外出した帰りに買い物を頼まれる</label><br>
+                        <input type="checkbox" id="option7" name="option" value="option7"><label for="option7">人と関わる仕事をしている</label><br>
+
+                </div>
+                
+                <!-- 二択の設問、最初は隠す -->
+                <div id="follow-up-question1" class="follow-up-question" style="display:none;">
+                    <p>過去に傘を忘れた経験について教えてください</p>
+                    <input type="radio" id="fuq1-option1" name="fuq1" value="often"><label for="fuq1-option1">それなりにある</label><br>
+                    <input type="radio" id="fuq1-option2" name="fuq1" value="5"><label for="fuq1-option2">ほとんどない</label><br>
+                    <div id="follow-up-question11" class="follow-up-question">
+                        <p>現在行っている対策について最も当てはまるものを1つ選んでください</p>
+                        <input type="radio" id="option11" name="additional-question" value="5">
+                        <label for="option11">中に持ち込めるように折りたたみにしている</label><br>
+                    
+                        <input type="radio" id="option12" name="additional-question" value="1">
+                        <label for="option12">傘を置くときは忘れないように脳細胞に叩き込んでいる</label><br>
+
+                        <input type="radio" id="option13" name="additional-question" value="0">
+                        <label for="option13">全ての命運は時の流れに任せている</label><br>
+
+                        <input type="radio" id="option14" name="additional-question" value="5">
+                        <label for="option14">傘を取るだろう時間にリマインダーをセットしている</label><br>
+
+                        <input type="radio" id="option15" name="additional-question" value="3">
+                        <label for="option15">一緒にいる知り合いに覚えておいてもらう</label><br>
+
+                        <input type="radio" id="option16" name="additional-question" value="5">
+                        <label for="option16">その他（絶対に忘れない対策をしている）</label><br>
+
+                        <input type="radio" id="option17" name="additional-question" value="3">
+                        <label for="option17">その他（対策をしているが忘れるかもしれない）</label><br>
+                    </div>
+                    
+                </div>
+                <!-- 他の設問 -->
+    
+                <div id="result"></div>
+                <button type="button" onclick="window.location.href='result-score.html'" class="result-button">結果画面へ</button>
+            </form>
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 初期化関数を定義
+                function initializeFollowUpQuestions() {
+                    var oftenRadio = document.getElementById('fuq1-option1');
+                    var neverRadio = document.getElementById('fuq1-option2');
+                    var additionalQuestions = document.getElementById('follow-up-question11');
+
+                    // 「それなりにある」が選択されている場合のみ、追加の質問を表示
+                    additionalQuestions.style.display = oftenRadio.checked ? 'block' : 'none';
+                }
+
+                // ページ読み込み時に初期化関数を実行
+                initializeFollowUpQuestions();
+
+                // 「雨の日に傘を持っていく」チェックボックスの状態を監視
+                var umbrellaCheckbox = document.getElementById('option1');
+                umbrellaCheckbox.addEventListener('change', function() {
+                    var followUpQuestion = document.getElementById('follow-up-question1');
+                    followUpQuestion.style.display = this.checked ? 'block' : 'none';
+                    initializeFollowUpQuestions(); // チェックボックスの変更時にも初期化関数を呼び出す
+                });
+
+                // 「それなりにある」と「全くない」のラジオボタンの状態を監視
+                var oftenRadio = document.getElementById('fuq1-option1');
+                var neverRadio = document.getElementById('fuq1-option2');
+
+                oftenRadio.addEventListener('change', initializeFollowUpQuestions);
+                neverRadio.addEventListener('change', initializeFollowUpQuestions);
+            });
+
+            function calculateScore() {
+                var score = 0;
+
+                // 「雨の日に傘を持っていく」選択時の追加質問の得点を加算
+                if (document.getElementById('option1').checked) {
+                    var fuq1Selected = document.querySelector('input[name="fuq1"]:checked');
+                    if (fuq1Selected) {
+                        score += parseInt(fuq1Selected.value, 10);
+                    }
+
+                    // 「それなりにある」が選択された場合の追加質問の得点を加算
+                    if (document.getElementById('fuq1-option1').checked) {
+                        var additionalQuestionSelected = document.querySelector('input[name="additional-question"]:checked');
+                        if (additionalQuestionSelected) {
+                            score += parseInt(additionalQuestionSelected.value, 10);
+                        }
+                    }
+                }
+
+                console.log('Calculated score:', score); // スコアのログ出力
+                // スコアをローカルストレージに保存
+                localStorage.setItem('koudouScore', score);
+
+                // 結果ページに遷移
+                window.location.href = 'result_score.html';
+            }
+        </script>
+    </body>
+
+
+
+
+</html>
