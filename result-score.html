@@ -4,6 +4,7 @@
         <title>数値の表示</title>
         <meta charset="UTF-8">
         <style>
+
             .container {
                     display: flex;
                     justify-content: center; /* 水平方向の中央寄せ */
@@ -20,38 +21,53 @@
                 margin-bottom: 10px; /* 下部にマージンを追加 */
             }
 
-            .speech-bubble {
-                position: relative;
-                background: #f0f0f0;
-                border-radius: 10px;
-                padding: 10px;
-                text-align: center;
-                width: 200px; /* 吹き出しの幅 */
-                margin: 20px; /* 余白 */
+            #ostrich-image {
+                width: 300px; /* 画像のサイズ調整 */
             }
 
-            /* 吹き出しのしっぽ部分 */
-            .speech-bubble:after {
+            .speech-bubble {
+                position: absolute;
+                top: 20px; /* 吹き出しの位置調整 */
+                left: 820px;
+                width: 300px;
+                padding: 10px;
+                background: #f0f0f0;
+                border-radius: 10px;
+                border: 2px solid #333;
+            }
+
+            .speech-bubble::after {
                 content: '';
                 position: absolute;
-                bottom: 100%;
-                left: 50%;
-                margin-left: -10px;
+                top: 100%;
+                left: 20px;
                 border-width: 10px;
                 border-style: solid;
-                border-color: transparent transparent #f0f0f0 transparent;
+                border-color: #f0f0f0 transparent transparent transparent;
             }
+
+            .result{
+                font-weight: bold;
+            }
+
         </style>
     </head>
     <body>
-        <div class="container">  
-            <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
-            <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
-            <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
+        <div class="container">
+            <div class="result">  
+                <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
+                <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
+                <p>行動 : 20</p>
+                <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
+            </div>
+          
+            <img src="ダチョウ画像.jpg" alt="ダチョウ" id="ostrich-image">
+            <div class="speech-bubble">ダチョウはとっても忘れやすい動物で、群れと群れがぶつかるとメンバーが自分がどっちの群れにいたかわからなくなってしまうんだ。でも、強靭（きょうじん）な身体能力を持っていることでも知られているよ！</div>
+     
         </div>
-        <p>動物の画像など</p>
-        <div class="speech-bubble">ダチョウはとっても忘れやすい生き物だけど、強靭な身体能力を持っているよ。</div>
-    </body>
+        <p>tips</p>
+        <p>それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
+        
     </body>
     <script>
         window.onload = function() {
