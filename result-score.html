@@ -27,7 +27,7 @@
 
             .speech-bubble {
                 position: absolute;
-                top: 20px; /* 吹き出しの位置調整 */
+                top: 100px; /* 吹き出しの位置調整 */
                 left: 820px;
                 width: 300px;
                 padding: 10px;
@@ -50,14 +50,29 @@
                 font-weight: bold;
             }
 
+            .header-text {
+                text-align: center; /* 中央揃え */
+                margin-bottom: 20px; /* 下部に余白を追加 */
+            }
+
+            /* Tipsセクションのスタイル */
+            .tips-section {
+                border: 2px solid #333; /* 枠線を追加 */
+                padding: 10px; /* 内側の余白を追加 */
+                margin: 20px; /* 外側の余白を追加 */
+            }
+
         </style>
     </head>
     <body>
+        <div class="header-text">
+            <h2>あなたはダチョウです！</h2>
+        </div>
         <div class="container">
             <div class="result">  
                 <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
-                <p>行動 : 20</p>
+                <p>行動点 : 20</p>
                 <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
             </div>
           
@@ -65,9 +80,12 @@
             <div class="speech-bubble">ダチョウはとっても忘れやすい動物で、群れと群れがぶつかるとメンバーが自分がどっちの群れにいたかわからなくなってしまうんだ。でも、強靭（きょうじん）な身体能力を持っていることでも知られているよ！</div>
      
         </div>
-        <p>tips</p>
-        <p>それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
-        
+        <p style="font-size: 20px">💡tips</p>
+        <div class="tips-section">
+            
+            <p>それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
+        </div>
+
     </body>
     <script>
         window.onload = function() {
