@@ -3,6 +3,9 @@
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="common_form.css">
+        <title>クイズ</title>
         <style>
 
             p {
@@ -12,121 +15,16 @@
                 font-weight: bold;
             }
 
-            .container {
-                display: flex;
-                justify-content: center; /* 水平方向の中央寄せ */
-                align-items: center; /* 垂直方向の中央寄せ */
-                min-height: 100vh; /* ビューポートの高さに合わせる */
-            }
-
-            .radio-first {
-                transform: scale(3.0);
-                margin-right: 40px;
-                margin-left: 70px;
-            }
-
-            .radio-second {
-                transform: scale(2.3);
-                margin-right: 20px;
-                margin-left: 20px;
-            }
-
-            .radio-third {
-                transform: scale(1.6);
-                margin-right: 20px;
-                margin-left: 20px;
-            }
-
-            .radio-fourth {
-                transform: scale(2.3);
-                margin-right: 20px;
-                margin-left: 20px;
-            }
-            
-            .radio-fifth {
-                transform: scale(3.0);
-                margin-right: 70px;
-                margin-left: 40px;
-            }
-
-            .label-green {
-                color: yellowgreen;
-                font-size: 30px;
-            }
-
-            .label-orange {
-                color: orange;
-                font-size: 30px;
-            }
-
-            .radio-button {
-                font-size: 20px;
-            }
-
-            .result-button {
-                font-size: 20px; /* フォントサイズを大きくする */
-                padding: 15px 30px; /* 上下左右のパディングを追加 */
-                cursor: pointer;
-            }
-
             h1 {
                 font-size: 50px;
                 color: white;
                 display: flex;
                 justify-content: center;
-	            align-items: center;
+                align-items: center;
                 background-color: rgb(111, 111, 175);
             }
 
-            button {
-                background-color: #4CAF50; /* 緑色の背景 */
-                color: white; /* 白色のテキスト */
-                padding: 15px 32px; /* パディング */
-                text-align: center; /* テキストを中央揃え */
-                text-decoration: none; /* テキストの装飾を無効化 */
-                display: inline-block; /* インラインブロック要素として表示 */
-                font-size: 16px; /* フォントサイズ */
-                margin: 4px 2px; /* マージン */
-                cursor: pointer; /* カーソルをポインタに */
-                border: none; /* 枠線なし */
-                border-radius: 5px; /* 角を丸くする */
-                transition: background-color 0.3s; /* 背景色の変更にアニメーションを適用 */
-            }
-
-            button:hover {
-                background-color: #45a049; /* ホバー時の背景色 */
-            }
-
-            .question {
-                width: 80%; /* 要素の幅を画面幅の80%に設定 */
-                margin: 0 auto; /* 左右のマージンを自動に設定して中央揃え */
-                text-align: center; /* テキストを中央揃え */
-                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
-            }
-
-           .question11 {
-                width: 80%; /* 要素の幅を画面幅の80%に設定 */
-                margin: 0 auto; /* 左右のマージンを自動に設定して中央揃え */
-                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
-                font-size: 20px;
-           }
-
-           p.question11 {
-                width: 80%; /* 要素の幅を画面幅の80%に設定 */
-                margin: 0 auto; /* 左右のマージンを自動に設定して中央揃え */
-                text-align: center; /* テキストを中央揃え */
-                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
-           }
-
-           .radio-button {
-            font-size: 30px;
-            color: gray;
             
-           }
-
-           .question11 input[type="radio"] {
-                transform: scale(2); /* ラジオボタンを2倍の大きさにスケールアップ */
-            }
             
         </style>
     </head>
