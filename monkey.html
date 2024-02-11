@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>結果画面(サル)</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="common_form.css">
+        <style>
+
+            .container > div {
+                margin-bottom: 10px; /* 10pxのマージンを追加 */
+            }
+
+            #ukkariDisplay, #komaridoDisplay, #totalScoreDisplay {
+                display: block; /* ブロックレベル要素として表示 */
+                margin-bottom: 10px; /* 下部にマージンを追加 */
+            }
+
+            #ostrich-image {
+                width: 300px; /* 画像のサイズ調整 */
+                height: auto;
+            }
+
+            .speech-bubble {
+                position: absolute;
+                top: 100px; /* 吹き出しの位置調整 */
+                left: 820px;
+                width: 300px;
+                padding: 10px;
+                background: #f0f0f0;
+                border-radius: 10px;
+                border: 2px solid #333;
+            }
+
+            .speech-bubble::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                border-width: 10px;
+                border-style: solid;
+                border-color: #f0f0f0 transparent transparent transparent;
+            }
+
+            .result{
+                font-weight: bold;
+            }
+
+            .header-text {
+                text-align: center; /* 中央揃え */
+                margin-bottom: 20px; /* 下部に余白を追加 */
+                font-weight: bold;
+                font-size: 30px;
+            }
+
+            /* Tipsセクションのスタイル */
+            .tips-section {
+                border: 2px solid #333; /* 枠線を追加 */
+                padding: 10px; /* 内側の余白を追加 */
+                margin: 20px; /* 外側の余白を追加 */
+                font-weight: bold;
+            }
+
+            
+
+            body::before {
+                content: "";
+                position: fixed; /* 固定位置にする */
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-height: 100vh;
+                background-image: url('結果画面背景.jpg');
+                background-size: cover;
+                background-position: center;
+                opacity: 0.5;
+                z-index: -1;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <div class="header-text">
+            <h2>あなたはサルです！</h2>
+        </div>
+        <div class="container">
+            <div class="result">  
+                <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
+                <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
+                <div id="actionDisplay">行動点のスコアがここに表示されます。</div>
+                <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
+            </div>
+          
+            <img src="./サル.png" alt="サル" id="ostrich-image">
+            
+            <div class="speech-bubble">動物の知能の指標となる脳化指数が0.25もあり、チンパンジーはなんと0.30で、ヒトやイルカに続く賢さなんだよ。研究では数の概念を理解していることが分かっていて、足し算もできるよ。記憶力も高く、えさ場や安産な場所、怖いヒトも覚えるよ。</div>
+     
+        </div>
+        <p style="font-size: 20px">💡tips</p>
+        <div class="tips-section">
+            
+            <p>それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
+        </div>
+
+    </body>
+    <script>
+        window.onload = function() {
+            // ローカルストレージから数値を個別に取得
+            var ukkari = localStorage.getItem('ukkariScore');
+            var komarido = localStorage.getItem('komaridoScore');
+            var action = localStorage.getItem('actionScore');  // ここを修正
+
+            // 数値に変換（もし文字列なら）
+            var ukkariScore = parseInt(ukkari, 10);
+            var komaridoScore = parseInt(komarido, 10);
+            var actionScore = parseInt(action, 10);  // ここを修正
+            var totalScore = ukkariScore + komaridoScore + actionScore;  // 総合スコアの計算を修正
+
+            // スコアが存在するかチェック
+            if (ukkari !== null) {
+                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore;
+            } else {
+                document.getElementById('ukkariDisplay').textContent = 'うっかり度のスコアは保存されていません。';
+            }
+
+            // こまり度を表示
+            if (komarido !== null) {
+                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore;
+            } else {
+                document.getElementById('komaridoDisplay').textContent = 'こまり度のスコアは保存されていません。';
+            }
+
+            // 行動点を表示
+            if (action !== null) {
+                document.getElementById('actionDisplay').textContent = '行動点(加点): ' + actionScore;
+            } else {
+                document.getElementById('actionDisplay').textContent = '行動点のスコアは保存されていません。';
+            }
+
+            // 総合スコアを表示
+            document.getElementById('totalScoreDisplay').textContent = '総合スコア: ' + totalScore;
+        };
+        
+    </script>
+</html>

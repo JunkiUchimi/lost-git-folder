@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="common_form.css">
+        <style>
+
+            .container {
+                display: flex;
+                justify-content: center; /* 水平方向の中央寄せ */
+                align-items: center; /* 垂直方向の中央寄せ */
+                min-height: 100vh; /* ビューポートの高さに合わせる */
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            .column {
+                flex: 1;
+            }
+
+            h1 {
+                font-size: 50px;
+                color: white;
+                display: flex;
+                justify-content: center;
+	            align-items: center;
+                background-color: rgb(111, 111, 175);
+            }
+
+            button {
+                background-color: #4CAF50; /* 緑色の背景 */
+                color: white; /* 白色のテキスト */
+                padding: 15px 32px; /* パディング */
+                text-align: center; /* テキストを中央揃え */
+                text-decoration: none; /* テキストの装飾を無効化 */
+                display: inline-block; /* インラインブロック要素として表示 */
+                font-size: 16px; /* フォントサイズ */
+                margin: 4px 2px; /* マージン */
+                cursor: pointer; /* カーソルをポインタに */
+                border: none; /* 枠線なし */
+                border-radius: 5px; /* 角を丸くする */
+                transition: background-color 0.3s; /* 背景色の変更にアニメーションを適用 */
+            }
+
+           .question11 {
+                width: 80%; /* 要素の幅を画面幅の80%に設定 */
+                margin: 0 auto; /* 左右のマージンを自動に設定して中央揃え */
+                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
+                font-size: 20px;
+           }
+
+           p.question11 {
+                width: 80%; /* 要素の幅を画面幅の80%に設定 */
+                margin: 0 auto; /* 左右のマージンを自動に設定して中央揃え */
+                text-align: center; /* テキストを中央揃え */
+                margin-bottom: 5em; /* `<div>` 要素の下に5行分のマージンを追加 */
+           }
+
+           .question11 input[type="radio"] {
+                transform: scale(2); /* ラジオボタンを2倍の大きさにスケールアップ */
+            }
+
+            label {
+                font-size: 24px; /* または希望のサイズに調整 */
+            }
+            
+            #main-question {
+                display: flex;
+                justify-content: space-between; /* 要素を左右に分散させる */
+            }
+
+            .column {
+                flex: 1;
+                padding: 0 10px; /* カラム内のコンテンツに余白を設ける */
+            }
+
+            #anotherSelect {
+                font-size: 20px; /* フォントサイズを大きくしてオプションのテキストを大きく表示 */
+                padding: 10px 20px; /* 内部の上下に10px、左右に20pxのパディングを追加 */
+                cursor: pointer; /* カーソルをポインタに変更してクリック可能な要素であることを示す */
+            }
+
+            #textBox {
+                width: 100%; /* テキストボックスを親要素の幅いっぱいに広げる */
+                padding: 10px; /* テキストボックス内部の上下左右に10pxの余白を追加 */
+                box-sizing: border-box; /* パディングとボーダーを幅に含める設定 */
+            }
+
+        </style>
+    </head>
+   
+    <body>
+        <div class="container">
+            <form id="quiz-form">
+                <h1>行動診断</h1>
+                <hr>
+
+                <p style="font-size:30px">あなたが忘れた(無くした)ものについて最大5つ教えてください。</p>
+                <div id="main-question">    
+                    <div class="column">
+                        <!-- 左半分のチェックボックス -->
+                        <input type="checkbox" id="option1" class="option" name="option" value="option1" data-label="傘"><label for="option1">傘</label><br> 
+                        <input type="checkbox" id="option2" class="option" name="option" value="option2" data-label="鍵"><label for="option2">鍵</label><br>
+                        <input type="checkbox" id="option3" class="option" name="option" value="option3" data-label="携帯"><label for="option3">携帯</label><br>
+                        <input type="checkbox" id="option4" class="option" name="option" value="option4" data-label="定期券"><label for="option4">定期券</label><br>
+                        <input type="checkbox" id="option5" class="option" name="option" value="option5" data-label="弁当・水筒"><label for="option5">弁当・水筒</label><br>
+                        <input type="checkbox" id="option6" class="option" name="option" value="option6" data-label="充電器"><label for="option6">充電器</label><br>
+                        <input type="checkbox" id="option7" class="option" name="option" value="option7" data-label="〆切"><label for="option7">〆切</label><br>
+                        <input type="checkbox" id="option8" class="option" name="option" value="option8" data-label="遊ぶ約束"><label for="option8">遊ぶ約束</label><br>
+                        <input type="checkbox" id="option9" class="option" name="option" value="option9" data-label="サブスクの解約"><label for="option9">サブスクの解約</label><br>
+                        <input type="checkbox" id="option10" class="option" name="option" value="option10" data-label="時計"><label for="option10">時計</label><br>
+                        <input type="checkbox" id="option11" class="option" name="option" value="option11" data-label="返却期限"><label for="option11">返却期限</label><br>
+                    </div>
+                    <div class="column">
+                        <!-- 右半分のチェックボックス -->
+                        <input type="checkbox" id="option12" class="option" name="option" value="option12" data-label="メガネ"><label for="option12">メガネ</label><br>
+                        <input type="checkbox" id="option13" class="option" name="option" value="option13" data-label="入れ歯"><label for="option13">入れ歯</label><br>
+                        <input type="checkbox" id="option14" class="option" name="option" value="option14" data-label="筆記用具"><label for="option14">筆記用具</label><br>
+                        <input type="checkbox" id="option15" class="option" name="option" value="option15" data-label="提出書類"><label for="option15">提出書類</label><br>
+                        <input type="checkbox" id="option16" class="option" name="option" value="option16" data-label="仕事の予定"><label for="option16">仕事の予定</label><br>
+                        <input type="checkbox" id="option17" class="option" name="option" value="option17" data-label="買う予定だったもの"><label for="option17">買う予定だったもの</label><br>
+                        <input type="checkbox" id="option18" class="option" name="option" value="option18" data-label="財布"><label for="option18">財布</label><br>
+                        <input type="checkbox" id="option19" class="option" name="option" value="option19" data-label="学生証・社員証"><label for="option19">学生証・社員証</label><br>
+                        <input type="checkbox" id="option20" class="option" name="option" value="option20" data-label="現金"><label for="option20">現金</label><br>
+                        <input type="checkbox" id="option21" class="option" name="option" value="option21" data-label="ハンカチ・ティッシュ"><label for="option21">ハンカチ・ティッシュ</label><br>
+                        <input type="checkbox" id="option22" class="option" name="option" value="option22" data-label="防寒具・上着"><label for="option22">防寒具・上着</label><br>
+                        <input type="checkbox" id="option23" class="option" name="option" value="option23" data-label="チケット・切符"><label for="option23">チケット・切符</label><br>
+                    </div>
+                </div><br>
+                
+                <!-- 二択の設問、ラジオボタンを使用 -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion1">
+                    <label id="yesNoLabel1">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo1" value="yes" onchange="toggleFields(1, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo1" value="-5" onchange="toggleFields(1, this.value)"><label>いいえ</label><br>
+
+                    <div id="additionalFields1" style="display: none;">
+                        <label for="textBox1">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox1"><br>
+                    
+                        <label for="anotherSelect1">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect1">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 2番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion2">
+                    <label id="yesNoLabel2">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo2" value="yes" onchange="toggleFields(2, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo2" value="-5" onchange="toggleFields(2, this.value)"><label>いいえ</label>
+                    <div id="additionalFields2" style="display: none;">
+                        <label for="textBox2">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox2"><br>
+                    
+                        <label for="anotherSelect2">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect2">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 3番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion3">
+                    <label id="yesNoLabel3">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo3" value="yes" onchange="toggleFields(3, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo3" value="-5" onchange="toggleFields(3, this.value)"><label>いいえ</label>
+                    <div id="additionalFields3" style="display: none;">
+                        <label for="textBox3">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox3"><br>
+                        <label for="anotherSelect3">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect3">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 4番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion4">
+                    <label id="yesNoLabel4">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo4" value="yes" onchange="toggleFields(4, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo4" value="-5" onchange="toggleFields(4, this.value)"><label>いいえ</label>
+                    <div id="additionalFields4" style="display: none;">
+                        <label for="textBox4">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox4"><br>
+                        <label for="anotherSelect4">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect4">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 5番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion5">
+                    <label id="yesNoLabel5">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo5" value="yes" onchange="toggleFields(5, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo5" value="-5" onchange="toggleFields(5, this.value)"><label>いいえ</label>
+                    <div id="additionalFields5" style="display: none;">
+                        <label for="textBox5">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox5"><br>
+                        <label for="anotherSelect5">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect5">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 6番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion6">
+                    <label id="yesNoLabel6">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo6" value="yes" onchange="toggleFields(6, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo6" value="-5" onchange="toggleFields(6, this.value)"><label>いいえ</label>
+                    <div id="additionalFields6" style="display: none;">
+                        <label for="textBox6">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox6"><br>
+                        <label for="anotherSelect6">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect6">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 7番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion7">
+                    <label id="yesNoLabel7">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo7" value="yes" onchange="toggleFields(7, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo7" value="-5" onchange="toggleFields(7, this.value)"><label>いいえ</label>
+                    <div id="additionalFields7" style="display: none;">
+                        <label for="textBox7">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox7"><br>
+                        <label for="anotherSelect7">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect7">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 8番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion8">
+                    <label id="yesNoLabel8">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo8" value="yes" onchange="toggleFields(8, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo8" value="-5" onchange="toggleFields(8, this.value)"><label>いいえ</label>
+                    <div id="additionalFields8" style="display: none;">
+                        <label for="textBox8">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox8"><br>
+                        <label for="anotherSelect8">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect8">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 9番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion9">
+                    <label id="yesNoLabel9">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo9" value="yes" onchange="toggleFields(9, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo9" value="-5" onchange="toggleFields(9, this.value)"><label>いいえ</label>
+                    <div id="additionalFields9" style="display: none;">
+                        <label for="textBox9">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox9"><br>
+                        <label for="anotherSelect9">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect9">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 10番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion10">
+                    <label id="yesNoLabel10">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo10" value="yes" onchange="toggleFields(10, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo10" value="-5" onchange="toggleFields(10, this.value)"><label>いいえ</label>
+                    <div id="additionalFields10" style="display: none;">
+                        <label for="textBox10">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox10"><br>
+                        <label for="anotherSelect10">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect10">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 11番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion11">
+                    <label id="yesNoLabel11">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo11" value="yes" onchange="toggleFields(11, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo11" value="-5" onchange="toggleFields(11, this.value)"><label>いいえ</label>
+                    <div id="additionalFields11" style="display: none;">
+                        <label for="textBox11">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox11"><br>
+                        <label for="anotherSelect11">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect11">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 12番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion12">
+                    <label id="yesNoLabel12">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo12" value="yes" onchange="toggleFields(12, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo12" value="-5" onchange="toggleFields(12, this.value)"><label>いいえ</label>
+                    <div id="additionalFields12" style="display: none;">
+                        <label for="textBox12">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox12"><br>
+                        <label for="anotherSelect12">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect12">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 13番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion13">
+                    <label id="yesNoLabel13">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo13" value="yes" onchange="toggleFields(13, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo13" value="-5" onchange="toggleFields(13, this.value)"><label>いいえ</label>
+                    <div id="additionalFields13" style="display: none;">
+                        <label for="textBox13">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox13"><br>
+                        <label for="anotherSelect13">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect13">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 14番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion14">
+                    <label id="yesNoLabel14">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo14" value="yes" onchange="toggleFields(14, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo14" value="-5" onchange="toggleFields(14, this.value)"><label>いいえ</label>
+                    <div id="additionalFields14" style="display: none;">
+                        <label for="textBox14">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox14"><br>
+                        <label for="anotherSelect14">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect14">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 15番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion15">
+                    <label id="yesNoLabel15">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo15" value="yes" onchange="toggleFields(15, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo15" value="-5" onchange="toggleFields(15, this.value)"><label>いいえ</label>
+                    <div id="additionalFields15" style="display: none;">
+                        <label for="textBox15">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox15"><br>
+                        <label for="anotherSelect15">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect15">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 16番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion16">
+                    <label id="yesNoLabel16">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo16" value="yes" onchange="toggleFields(16, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo16" value="-5" onchange="toggleFields(16, this.value)"><label>いいえ</label>
+                    <div id="additionalFields16" style="display: none;">
+                        <label for="textBox16">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox16"><br>
+                        <label for="anotherSelect16">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect16">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 16番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion17">
+                    <label id="yesNoLabel17">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo17" value="yes" onchange="toggleFields(17, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo17" value="-5" onchange="toggleFields(17, this.value)"><label>いいえ</label>
+                    <div id="additionalFields17" style="display: none;">
+                        <label for="textBox17">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox17"><br>
+                        <label for="anotherSelect17">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect17">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 18番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion18">
+                    <label id="yesNoLabel18">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo18" value="yes" onchange="toggleFields(18, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo18" value="-5" onchange="toggleFields(18, this.value)"><label>いいえ</label>
+                    <div id="additionalFields18" style="display: none;">
+                        <label for="textBox18">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox18"><br>
+                        <label for="anotherSelect18">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect18">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 19番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion19">
+                    <label id="yesNoLabel19">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo19" value="yes" onchange="toggleFields(19, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo19" value="-5" onchange="toggleFields(19, this.value)"><label>いいえ</label>
+                    <div id="additionalFields19" style="display: none;">
+                        <label for="textBox19">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox19"><br>
+                        <label for="anotherSelect19">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect19">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 20番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion20">
+                    <label id="yesNoLabel20">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo20" value="yes" onchange="toggleFields(20, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo20" value="-5" onchange="toggleFields(20, this.value)"><label>いいえ</label>
+                    <div id="additionalFields20" style="display: none;">
+                        <label for="textBox20">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox20"><br>
+                        <label for="anotherSelect20">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect20">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 21番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion21">
+                    <label id="yesNoLabel21">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo21" value="yes" onchange="toggleFields(21, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo21" value="-5" onchange="toggleFields(21, this.value)"><label>いいえ</label>
+                    <div id="additionalFields21" style="display: none;">
+                        <label for="textBox21">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox21"><br>
+                        <label for="anotherSelect21">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect21">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 22番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion22">
+                    <label id="yesNoLabel22">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo22" value="yes" onchange="toggleFields(22, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo22" value="-5" onchange="toggleFields(22, this.value)"><label>いいえ</label>
+                    <div id="additionalFields22" style="display: none;">
+                        <label for="textBox22">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox22"><br>
+                        <label for="anotherSelect22">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect22">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+
+                <!-- 23番目のラジオボタングループ -->
+                <div class="yes-no-question" style="display: none;" id="yesNoQuestion23">
+                    <label id="yesNoLabel23">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
+                    <input type="radio" name="yesNo23" value="yes" onchange="toggleFields(23, this.value)"><label>はい</label>
+                    <input type="radio" name="yesNo23" value="-5" onchange="toggleFields(23, this.value)"><label>いいえ</label>
+                    <div id="additionalFields23" style="display: none;">
+                        <label for="textBox23">具体的な対策を教えてください：</label>
+                        <input type="text" id="textBox23"><br>
+                        <label for="anotherSelect23">その対策によって、どれくらいの確率で忘れ物を防ぐことが出来ますか。</label><br>
+                        <select id="anotherSelect23">
+                            <option value="5">100%</option>
+                            <option value="4">75%</option>
+                            <option value="3">50%</option>
+                            <option value="2">25%</option>
+                            <option value="1">0%</option>
+                        </select>
+                    </div><br><br><br>
+                </div>
+             
+                <div id="result"></div>
+                <button type="button" onclick="calculateScore()" class="result-button">結果画面へ</button>
+            </form>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // フォーム要素にイベントリスナーを追加
+                var form = document.getElementById('quiz-form'); // フォームのIDに応じて調整してください
+                form.addEventListener('keydown', function(event) {
+                    // エンターキーが押された場合
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); // フォームの送信を防ぐ
+                    }
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var checkboxes = document.querySelectorAll('.option'); // 全チェックボックスの選択
+                var maxChecked = 5;
+                var checkedCount = 0;
+                var resultButton = document.querySelector('.result-button');
+    
+                checkboxes.forEach(function(checkbox, index) {
+                    checkbox.addEventListener('change', function() {
+                        // 対応するラジオボタンの質問エリアを取得
+                        var yesNoQuestion = document.getElementById('yesNoQuestion' + (index + 1));
+                        var yesNoLabel = document.getElementById('yesNoLabel' + (index + 1));
+
+                        // チェックボックスが選択された場合、ラベルを更新し、対応するラジオボタンを表示
+                        if (this.checked) {
+                            yesNoLabel.textContent = this.nextSibling.textContent.trim() + 'の忘れ物に対してなにか対策をしていますか？';
+                            yesNoQuestion.style.display = 'block';
+                            checkedCount++;
+
+                            // 選択可能な最大数を超えた場合、最後に選択したチェックボックスを解除し、警告を表示
+                            if (checkedCount > maxChecked) {
+                                this.checked = false;
+                                yesNoQuestion.style.display = 'none';
+                                checkedCount--;
+                                alert('最大で5つまで選択できます。');
+                            }
+                        } else {
+                            yesNoQuestion.style.display = 'none';
+                            checkedCount--;
+                        }
+                    });
+                });
+                resultButton.addEventListener('click', calculateScore);
+
+            });
+
+            function toggleFields(index, value) {
+                // 対応するadditionalFieldsの要素を取得
+                var fields = document.getElementById("additionalFields" + index); // IDの末尾にインデックスを追加
+
+                if (value === "yes") {
+                    fields.style.display = "block"; // 「はい」が選択されたら表示
+                } else {
+                    fields.style.display = "none"; // それ以外の場合は非表示
+                }
+            }
+        
+            function calculateScore() {
+                var score = 0;
+                for (var i = 1; i <= 23; i++) {
+                    var yesRadio = document.querySelector('input[name="yesNo' + i + '"]:checked');
+                    if (yesRadio) {
+                        var value = parseInt(yesRadio.value, 10);
+                        if (!isNaN(value)) {
+                            score += value;
+                        }
+                        if (yesRadio.value === 'yes') {
+                            var additionalSelect = document.getElementById('anotherSelect' + i);
+                            if (additionalSelect) {
+                                var selectValue = parseInt(additionalSelect.value, 10);
+                                if (!isNaN(selectValue)) {
+                                    score += selectValue;
+                                }
+                            }
+                        }
+                    }
+                }
+                localStorage.setItem('actionScore', score);
+
+                // 以降のロジックを calculateScore 関数内に移動
+                var ukkari = localStorage.getItem('ukkariScore');
+                var komarido = localStorage.getItem('komaridoScore');
+                var action = localStorage.getItem('actionScore');
+
+                var ukkariScore = parseInt(ukkari, 10);
+                var komaridoScore = parseInt(komarido, 10);
+                var actionScore = parseInt(action, 10);
+                var totalScore = ukkariScore + komaridoScore + actionScore;
+
+                if (totalScore < 39) {
+                    window.location.href = 'owl.html';
+                } else if (totalScore < 45) {
+                    window.location.href = 'monkey.html';
+                } else if (totalScore < 51) {
+                    window.location.href = 'dog.html';
+                } else if (totalScore < 57) {
+                    window.location.href = 'horse.html';
+                } else if (totalScore < 63) {
+                    window.location.href = 'squirrel.html';
+                } else if (totalScore < 69) {
+                    window.location.href = 'chicken.html';
+                } else if (totalScore < 75) {
+                    window.location.href = 'koala.html';
+                } else {
+                    window.location.href = 'ostrich.html';
+                }
+            }
+    </script>
+    </body>
+</html>
