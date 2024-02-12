@@ -98,7 +98,7 @@
                 <h1>行動診断</h1>
                 <hr>
 
-                <p style="font-size:30px">あなたが忘れた(無くした)ものについて最大5つ教えてください。</p>
+                <p style="font-size:30px">あなたがこれまで忘れた(無くした)ものについて選んでください(最大5つ)。</p>
                 <div id="main-question">    
                     <div class="column">
                         <!-- 左半分のチェックボックス -->
@@ -135,7 +135,8 @@
                 <div class="yes-no-question" style="display: none;" id="yesNoQuestion1">
                     <label id="yesNoLabel1">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo1" value="yes" onchange="toggleFields(1, this.value)"><label>はい</label>
-                    <input type="radio" name="yesNo1" value="-5" onchange="toggleFields(1, this.value)"><label>いいえ</label><br>
+                    <input type="radio" name="yesNo1" value="-5" onchange="toggleFields(1, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo1" value="0" onchange="toggleFields(1, this.value)"><label>今は忘れることはなくなった</label><br>
 
                     <div id="additionalFields1" style="display: none;">
                         <label for="textBox1">具体的な対策を教えてください：</label>
@@ -157,6 +158,7 @@
                     <label id="yesNoLabel2">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo2" value="yes" onchange="toggleFields(2, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo2" value="-5" onchange="toggleFields(2, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo2" value="0" onchange="toggleFields(2, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields2" style="display: none;">
                         <label for="textBox2">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox2"><br>
@@ -177,6 +179,7 @@
                     <label id="yesNoLabel3">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo3" value="yes" onchange="toggleFields(3, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo3" value="-5" onchange="toggleFields(3, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo3" value="0" onchange="toggleFields(3, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields3" style="display: none;">
                         <label for="textBox3">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox3"><br>
@@ -196,6 +199,7 @@
                     <label id="yesNoLabel4">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo4" value="yes" onchange="toggleFields(4, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo4" value="-5" onchange="toggleFields(4, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo4" value="0" onchange="toggleFields(4, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields4" style="display: none;">
                         <label for="textBox4">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox4"><br>
@@ -215,6 +219,7 @@
                     <label id="yesNoLabel5">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo5" value="yes" onchange="toggleFields(5, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo5" value="-5" onchange="toggleFields(5, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo5" value="0" onchange="toggleFields(5, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields5" style="display: none;">
                         <label for="textBox5">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox5"><br>
@@ -234,6 +239,7 @@
                     <label id="yesNoLabel6">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo6" value="yes" onchange="toggleFields(6, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo6" value="-5" onchange="toggleFields(6, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo6" value="0" onchange="toggleFields(6, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields6" style="display: none;">
                         <label for="textBox6">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox6"><br>
@@ -253,6 +259,7 @@
                     <label id="yesNoLabel7">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo7" value="yes" onchange="toggleFields(7, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo7" value="-5" onchange="toggleFields(7, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo7" value="0" onchange="toggleFields(7, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields7" style="display: none;">
                         <label for="textBox7">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox7"><br>
@@ -272,6 +279,7 @@
                     <label id="yesNoLabel8">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo8" value="yes" onchange="toggleFields(8, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo8" value="-5" onchange="toggleFields(8, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo8" value="0" onchange="toggleFields(8, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields8" style="display: none;">
                         <label for="textBox8">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox8"><br>
@@ -291,6 +299,7 @@
                     <label id="yesNoLabel9">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo9" value="yes" onchange="toggleFields(9, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo9" value="-5" onchange="toggleFields(9, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo9" value="0" onchange="toggleFields(9, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields9" style="display: none;">
                         <label for="textBox9">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox9"><br>
@@ -310,6 +319,7 @@
                     <label id="yesNoLabel10">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo10" value="yes" onchange="toggleFields(10, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo10" value="-5" onchange="toggleFields(10, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo10" value="0" onchange="toggleFields(10, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields10" style="display: none;">
                         <label for="textBox10">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox10"><br>
@@ -329,6 +339,7 @@
                     <label id="yesNoLabel11">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo11" value="yes" onchange="toggleFields(11, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo11" value="-5" onchange="toggleFields(11, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo11" value="0" onchange="toggleFields(11, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields11" style="display: none;">
                         <label for="textBox11">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox11"><br>
@@ -348,6 +359,7 @@
                     <label id="yesNoLabel12">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo12" value="yes" onchange="toggleFields(12, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo12" value="-5" onchange="toggleFields(12, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo12" value="0" onchange="toggleFields(12, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields12" style="display: none;">
                         <label for="textBox12">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox12"><br>
@@ -367,6 +379,7 @@
                     <label id="yesNoLabel13">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo13" value="yes" onchange="toggleFields(13, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo13" value="-5" onchange="toggleFields(13, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo13" value="0" onchange="toggleFields(13, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields13" style="display: none;">
                         <label for="textBox13">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox13"><br>
@@ -386,6 +399,7 @@
                     <label id="yesNoLabel14">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo14" value="yes" onchange="toggleFields(14, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo14" value="-5" onchange="toggleFields(14, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo14" value="0" onchange="toggleFields(14, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields14" style="display: none;">
                         <label for="textBox14">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox14"><br>
@@ -405,6 +419,7 @@
                     <label id="yesNoLabel15">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo15" value="yes" onchange="toggleFields(15, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo15" value="-5" onchange="toggleFields(15, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo15" value="0" onchange="toggleFields(15, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields15" style="display: none;">
                         <label for="textBox15">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox15"><br>
@@ -424,6 +439,7 @@
                     <label id="yesNoLabel16">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo16" value="yes" onchange="toggleFields(16, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo16" value="-5" onchange="toggleFields(16, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo16" value="0" onchange="toggleFields(16, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields16" style="display: none;">
                         <label for="textBox16">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox16"><br>
@@ -443,6 +459,7 @@
                     <label id="yesNoLabel17">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo17" value="yes" onchange="toggleFields(17, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo17" value="-5" onchange="toggleFields(17, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo17" value="0" onchange="toggleFields(17, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields17" style="display: none;">
                         <label for="textBox17">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox17"><br>
@@ -462,6 +479,7 @@
                     <label id="yesNoLabel18">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo18" value="yes" onchange="toggleFields(18, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo18" value="-5" onchange="toggleFields(18, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo18" value="0" onchange="toggleFields(18, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields18" style="display: none;">
                         <label for="textBox18">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox18"><br>
@@ -481,6 +499,7 @@
                     <label id="yesNoLabel19">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo19" value="yes" onchange="toggleFields(19, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo19" value="-5" onchange="toggleFields(19, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo19" value="0" onchange="toggleFields(19, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields19" style="display: none;">
                         <label for="textBox19">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox19"><br>
@@ -500,6 +519,7 @@
                     <label id="yesNoLabel20">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo20" value="yes" onchange="toggleFields(20, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo20" value="-5" onchange="toggleFields(20, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo20" value="0" onchange="toggleFields(20, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields20" style="display: none;">
                         <label for="textBox20">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox20"><br>
@@ -519,6 +539,7 @@
                     <label id="yesNoLabel21">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo21" value="yes" onchange="toggleFields(21, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo21" value="-5" onchange="toggleFields(21, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo21" value="0" onchange="toggleFields(21, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields21" style="display: none;">
                         <label for="textBox21">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox21"><br>
@@ -538,6 +559,7 @@
                     <label id="yesNoLabel22">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo22" value="yes" onchange="toggleFields(22, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo22" value="-5" onchange="toggleFields(22, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo22" value="0" onchange="toggleFields(22, this.value)"><label>今は忘れることはなくなった</label><br>
                     <div id="additionalFields22" style="display: none;">
                         <label for="textBox22">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox22"><br>
@@ -557,6 +579,7 @@
                     <label id="yesNoLabel23">◯◯の忘れ物に対してなにか対策をしていますか？</label><br>
                     <input type="radio" name="yesNo23" value="yes" onchange="toggleFields(23, this.value)"><label>はい</label>
                     <input type="radio" name="yesNo23" value="-5" onchange="toggleFields(23, this.value)"><label>いいえ</label>
+                    <input type="radio" name="yesNo23" value="0" onchange="toggleFields(23, this.value)"><label>今は忘れることはなくなった</label><br><br>
                     <div id="additionalFields23" style="display: none;">
                         <label for="textBox23">具体的な対策を教えてください：</label>
                         <input type="text" id="textBox23"><br>
