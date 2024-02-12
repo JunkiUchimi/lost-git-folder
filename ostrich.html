@@ -22,8 +22,8 @@
 
             .speech-bubble {
                 position: absolute;
-                top: 100px; /* 吹き出しの位置調整 */
-                left: 820px;
+                top: 150px; /* 吹き出しの位置調整 */
+                left: 680px;
                 width: 300px;
                 padding: 10px;
                 background: #f0f0f0;
@@ -43,6 +43,7 @@
 
             .result{
                 font-weight: bold;
+                font-size: 20px;
             }
 
             .header-text {
@@ -54,11 +55,15 @@
 
             /* Tipsセクションのスタイル */
             .tips-section {
+                width: 250px;
                 border: 2px solid #333; /* 枠線を追加 */
                 padding: 10px; /* 内側の余白を追加 */
                 margin: 20px; /* 外側の余白を追加 */
+                margin-bottom: 20px;
                 font-weight: bold;
-                font-size: 20px;
+                font-size: 18px;
+                box-sizing: border-box; /* パディングとボーダーを含めた幅の計算方法を指定 */
+                word-wrap: break-word; /* 長い単語があっても折り返して表示 */
             }
 
             body::before {
@@ -74,6 +79,15 @@
                 opacity: 0.5;
                 z-index: -1;
             }
+
+            .bottom-text {
+                font-size: 20px;
+                position: fixed; /* 要素を固定位置に設定 */
+                right: 160px; /* 右側の余白 */
+                bottom: 100px; /* 下側の余白 */
+                margin-right: 10px; /* 右側の追加の余白 */
+                margin-bottom: 10px; /* 下側の追加の余白 */
+            }
             
 
         </style>
@@ -83,6 +97,8 @@
             <h2>あなたはダチョウです！</h2>
         </div>
         <div class="container">
+            <div class="speech-bubble">ダチョウはとっても忘れやすい動物で、群れと群れがぶつかるとメンバーが自分がどっちの群れにいたかわからなくなってしまうんだ。でも、強靭（きょうじん）な身体能力を持っていることでも知られているよ！</div>
+        <div class="container">
             <div class="result">  
                 <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
@@ -90,12 +106,16 @@
                 <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
             </div>
             <img src="./ostrich.png" alt="ostrich" id="ostrich-image">
-            <div class="speech-bubble">ダチョウはとっても忘れやすい動物で、群れと群れがぶつかるとメンバーが自分がどっちの群れにいたかわからなくなってしまうんだ。でも、強靭（きょうじん）な身体能力を持っていることでも知られているよ！</div>
+            <div class="tips-section">
+                <p style="text-align:center">tips💡</p>
+                <p>それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
+            </div>
+            <p class="bottom-text">
+                <a href="https://muramutu.wixsite.com/lost-item-inspection" target="_blank">ホームに戻る</a>
+            </p>
         </div>
  
-        <div class="tips-section">
-            <p>tips💡 それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
-        </div>
+        
 
     </body>
     <script>
