@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
@@ -23,6 +23,31 @@
                 display: flex;
                 justify-content: center;
 	            align-items: center;
+            }
+
+            /* メディアクエリ */
+            @media (max-width: 600px) {
+                p {
+                    font-size: 20px; /* フォントサイズを小さくする */
+                }
+
+                h1 {
+                    font-size: 30px; /* タイトルのフォントサイズを小さくする */
+                    padding: 10px; /* 余白を調整する */
+                }
+
+                .container, .question {
+                    padding: 10px; /* コンテナと質問のパディングを調整する */
+                }
+
+                input[type="radio"] {
+                    margin: 5px; /* ラジオボタンのマージンを調整する */
+                }
+
+                label {
+                    display: block; /* ラベルをブロック要素にすることで一行に表示 */
+                    margin-bottom: 5px; /* ラベルの下マージンを調整 */
+                }
             }
             
         </style>
