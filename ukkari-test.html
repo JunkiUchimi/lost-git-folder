@@ -26,31 +26,30 @@
 
             /* メディアクエリ */
             @media (max-width: 600px) {
-                /* スマートフォン用のスタイル調整 */
-
-                .question {
-                    display: flex; /* Flexboxを使用 */
-                    flex-direction: column; /* 子要素を縦方向に並べる */
-                    align-items: center; /* 子要素を中央揃えにする */
+                p {
+                    font-size: 20px; /* フォントサイズを小さくする */
                 }
 
-                .question .label-container {
-                    display: flex; /* Flexboxを使用して表示 */
-                    justify-content: space-between; /* アイテムを両端に配置 */
-                    width: 100%; /* コンテナの幅を最大にする */
-                    margin-bottom: 10px; /* ラベルの下のマージンを設定 */
+                h1 {
+                    font-size: 30px; /* タイトルのフォントサイズを小さくする */
+                    padding: 10px; /* 余白を調整する */
                 }
 
-                .question .radio-container {
-                    display: flex; /* Flexboxを使用してラジオボタンを横並びにする */
-                    justify-content: center; /* 中央揃えにする */
-                    flex-wrap: wrap; /* 必要に応じて折り返す */
-                    gap: 10px; /* ボタン間のギャップを設定 */
+                .container, .question {
+                    padding: 10px; /* コンテナと質問のパディングを調整する */
                 }
 
-                .question input[type="radio"] {
-                    margin: 0; /* 上下のマージンを削除 */
-                    width: auto; /* デフォルトの幅に戻す */
+                input[type="radio"] {
+                    margin: 5px; /* ラジオボタンのマージンを調整する */
+                }
+
+                label {
+                    display: block; /* ラベルをブロック要素にすることで一行に表示 */
+                    margin-bottom: 5px; /* ラベルの下マージンを調整 */
+                }
+
+                .label-green {
+                    font-size: 8px;
                 }
             }
             
