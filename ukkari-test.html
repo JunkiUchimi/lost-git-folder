@@ -50,11 +50,44 @@
 
                 .label-green {
                     font-size: 12px;
+		    font-weight: bold;
                 }
 		    
 		.label-orange {
                     font-size: 12px;
+		    font-weight: bold;
                 }
+
+		.radio-first {
+		    transform: scale(2.2);
+		    margin-right: 40px;
+		    margin-left: 70px;
+		}
+		
+		.radio-second {
+		    transform: scale(1.9);
+		    margin-right: 20px;
+		    margin-left: 20px;
+		}
+		
+		.radio-third {
+		    transform: scale(1.6);
+		    margin-right: 20px;
+		    margin-left: 20px;
+		}
+		
+		.radio-fourth {
+		    transform: scale(1.9);
+		    margin-right: 20px;
+		    margin-left: 20px;
+		}
+		
+		.radio-fifth {
+		    transform: scale(2.2);
+		    margin-right: 70px;
+		    margin-left: 40px;
+		}
+
             }
             
         </style>
@@ -67,18 +100,15 @@
                 <h1>うっかり度診断</h1><br><br><br><hr>
                 
                 <div id="question1" class="question">
-                    <div class="label-container">
-                        <label class="label-green">とてもそう思う</label>
-                        <label class="label-orange">全くそう思わない</label>
-                    </div>
-                    <div class="radio-container">
-                        <input type="radio" name="answer1" value="50/7" class="radio-first">
-                        <input type="radio" name="answer1" value="40/7" class="radio-second">
-                        <input type="radio" name="answer1" value="30/7" class="radio-third">
-                        <input type="radio" name="answer1" value="20/7" class="radio-fourth">
-                        <input type="radio" name="answer1" value="10/7" class="radio-fifth">
-                    </div>
-                </div>
+                    <p>ものをしばしばなくす</p>
+                    <label class="label-green">とてもそう思う</label>
+                    <input type="radio" name="answer1" value="50/7" class="radio-first">
+                    <input type="radio" name="answer1" value="40/7" class="radio-second">
+                    <input type="radio" name="answer1" value="30/7" class="radio-third">
+                    <input type="radio" name="answer1" value="20/7" class="radio-fourth">
+                    <input type="radio" name="answer1" value="10/7" class="radio-fifth">
+                    <label class="label-orange">全くそう思わない</label>
+                </div><hr><br>
             
                 
                 <div id="question2" class="question">
