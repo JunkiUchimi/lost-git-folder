@@ -14,7 +14,6 @@
                 color: gray;
                 font-weight: bold;
             }
-
             
             h1 {
                 font-size: 50px;
@@ -27,57 +26,31 @@
 
             /* メディアクエリ */
             @media (max-width: 600px) {
-                p {
-                    font-size: 20px; /* フォントサイズを小さくする */
-                }
+                /* スマートフォン用のスタイル調整 */
 
-                h1 {
-                    font-size: 30px; /* タイトルのフォントサイズを小さくする */
-                    padding: 10px; /* 余白を調整する */
-                }
-
-                .container, .question {
-                    padding: 10px; /* コンテナと質問のパディングを調整する */
-                }
-
-                input[type="radio"] {
-                    margin: 5px; /* ラジオボタンのマージンを調整する */
-                }
-
-                label {
-                    display: block; /* ラベルをブロック要素にすることで一行に表示 */
-                    margin-bottom: 5px; /* ラベルの下マージンを調整 */
-                }
-
-                .question input[type="radio"] {
-                    margin: 10px 0; /* 上下のマージンを広げる */
-                    display: block; /* ラジオボタンをブロック要素にし、一行に一つだけ表示 */
-                }
-
-                /* ラジオボタンのラベルのスタイルを調整 */
-                .question label {
-                    display: block; /* ラベルをブロック要素にする */
-                    margin-bottom: 5px; /* ラベルの下マージンを調整 */
-                }
-
-                /* ラベルを含むコンテナのスタイルを設定 */
-                .question .label-container {
-                    display: flex; /* Flexboxを使用して表示 */
-                    justify-content: space-between; /* アイテムを両端に配置 */
-                    width: 100%; /* コンテナの幅を最大にする */
-                }
-
-                /* 「とてもそう思う」のラベルを特別にスタイル設定 */
-                .label-green {
-                    order: +1; /* Flexboxのorderプロパティを使用して、このラベルを上に移動 */
-                    margin-bottom: 10px; /* 下のマージンを広げる */
-                }
-
-                /* 質問セクションのスタイルを調整 */
                 .question {
                     display: flex; /* Flexboxを使用 */
                     flex-direction: column; /* 子要素を縦方向に並べる */
                     align-items: center; /* 子要素を中央揃えにする */
+                }
+
+                .question .label-container {
+                    display: flex; /* Flexboxを使用して表示 */
+                    justify-content: space-between; /* アイテムを両端に配置 */
+                    width: 100%; /* コンテナの幅を最大にする */
+                    margin-bottom: 10px; /* ラベルの下のマージンを設定 */
+                }
+
+                .question .radio-container {
+                    display: flex; /* Flexboxを使用してラジオボタンを横並びにする */
+                    justify-content: center; /* 中央揃えにする */
+                    flex-wrap: wrap; /* 必要に応じて折り返す */
+                    gap: 10px; /* ボタン間のギャップを設定 */
+                }
+
+                .question input[type="radio"] {
+                    margin: 0; /* 上下のマージンを削除 */
+                    width: auto; /* デフォルトの幅に戻す */
                 }
             }
             
@@ -91,17 +64,18 @@
                 <h1>うっかり度診断</h1><br><br><br><hr>
                 
                 <div id="question1" class="question">
-                    <p>ケアレスミスが多い</p>
                     <div class="label-container">
                         <label class="label-green">とてもそう思う</label>
                         <label class="label-orange">全くそう思わない</label>
                     </div>
-                    <input type="radio" name="answer1" value="50/7" class="radio-first">
-                    <input type="radio" name="answer1" value="40/7" class="radio-second">
-                    <input type="radio" name="answer1" value="30/7" class="radio-third">
-                    <input type="radio" name="answer1" value="20/7" class="radio-fourth">
-                    <input type="radio" name="answer1" value="10/7" class="radio-fifth">
-                </div><hr>
+                    <div class="radio-container">
+                        <input type="radio" name="answer1" value="50/7" class="radio-first">
+                        <input type="radio" name="answer1" value="40/7" class="radio-second">
+                        <input type="radio" name="answer1" value="30/7" class="radio-third">
+                        <input type="radio" name="answer1" value="20/7" class="radio-fourth">
+                        <input type="radio" name="answer1" value="10/7" class="radio-fifth">
+                    </div>
+                </div>
             
                 
                 <div id="question2" class="question">
