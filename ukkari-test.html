@@ -27,26 +27,28 @@
 
             /* メディアクエリ */
             @media (max-width: 600px) {
-                p {
-                    font-size: 20px; /* フォントサイズを小さくする */
+                /* ラジオボタンのスタイルを調整 */
+                .question input[type="radio"] {
+                    margin: 10px 0; /* 上下のマージンを広げる */
+                    display: block; /* ラジオボタンをブロック要素にし、一行に一つだけ表示 */
                 }
 
-                h1 {
-                    font-size: 30px; /* タイトルのフォントサイズを小さくする */
-                    padding: 10px; /* 余白を調整する */
-                }
-
-                .container, .question {
-                    padding: 10px; /* コンテナと質問のパディングを調整する */
-                }
-
-                input[type="radio"] {
-                    margin: 5px; /* ラジオボタンのマージンを調整する */
-                }
-
-                label {
-                    display: block; /* ラベルをブロック要素にすることで一行に表示 */
+                /* ラジオボタンのラベルのスタイルを調整 */
+                .question label {
+                    display: block; /* ラベルをブロック要素にする */
                     margin-bottom: 5px; /* ラベルの下マージンを調整 */
+                }
+
+                /* 「とてもそう思う」のラベルを特別にスタイル設定 */
+                .label-green {
+                    order: -1; /* Flexboxのorderプロパティを使用して、このラベルを上に移動 */
+                    margin-bottom: 10px; /* 下のマージンを広げる */
+                }
+
+                /* 質問セクションのスタイルを調整 */
+                .question {
+                    display: flex; /* Flexboxを使用 */
+                    flex-direction: column; /* 子要素を縦方向に並べる */
                 }
             }
             
