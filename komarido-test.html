@@ -49,12 +49,18 @@
                     font-size: 13px;
 		    font-weight: bold;
 		　　 text-align: left;
+		    display: block;
+		    text-align: right;
+		    margin-right: 10px;
                 }
 		    
 		.label-orange {
                     font-size: 13px;
 		    font-weight: bold;
 		    text-align: right;
+		    display: block;
+		    text-align: right;
+		    margin-right: 10px;
                 }
 
 		.radio-first {
@@ -87,9 +93,24 @@
 
 		.radio-button {
     		    font-size: 20px; /* 文字サイズを20pxに設定 */
-
             }
-
+		#question1 {
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		}
+		
+		#question1 .label-green, #question1 .label-orange {
+		    flex: 1; /* This allows the labels to take up equal space on both sides */
+		}
+		
+		#question1 .radio-first, 
+		#question1 .radio-second, 
+		#question1 .radio-third, 
+		#question1 .radio-fourth, 
+		#question1 .radio-fifth {
+		    flex: 0; /* Prevents radio buttons from growing and keeps them centered */
+		}
             
             
         </style>
