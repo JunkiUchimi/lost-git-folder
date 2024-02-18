@@ -88,6 +88,11 @@
                 margin-right: 10px; /* 右側の追加の余白 */
                 margin-bottom: 10px; /* 下側の追加の余白 */
             }
+            .container {
+                    display: flex;
+                    justify-content: center; /* 水平方向の中央寄せ */
+                    min-height: 100vh; /* ビューポートの高さに合わせる */
+            }
             
             @media (max-width: 600px) {
                 body, h2, p, a, label {
@@ -107,18 +112,19 @@
                     top: 0;
                     left: 0;
                 }
+
+                
             }
 
         </style>
     </head>
     <body>
-          
         <div class="header-text">
             <h2>あなたはダチョウです！</h2>
         </div>
-       
+        <div class="container">
             <div class="speech-bubble">ダチョウはとっても忘れやすい動物で、群れと群れがぶつかるとメンバーが自分がどっちの群れにいたかわからなくなってしまうんだ。でも、強靭（きょうじん）な身体能力を持っていることでも知られているよ！</div>
-      
+        <div class="container">
             <div class="result">  
                 <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
@@ -133,7 +139,7 @@
             <p class="bottom-text">
                 <a href="https://muramutu.wixsite.com/lost-item-inspection" target="_blank">ホームに戻る</a>
             </p>
-       
+        </div>
   </body>
     <script>
         window.onload = function() {
