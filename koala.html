@@ -24,7 +24,7 @@
                 background: #f0f0f0;
                 border-radius: 10px;
                 border: 2px solid #333;
-                font-size: 25px;
+                font-size: 30px;
             }
 
             .speech-bubble::after {
@@ -39,7 +39,7 @@
 
             .result{
                 font-weight: bold;
-                font-size: 37px;
+                font-size: 34px;
             }
 
             .header-text {
@@ -55,7 +55,7 @@
                 padding: 10px; /* 内側の余白を追加 */
                 margin: 20px; /* 外側の余白を追加 */
                 font-weight: bold;
-                font-size: 25px;
+                font-size: 30px;
             }
 
            body::before {
@@ -78,7 +78,7 @@
             }
              .bottom-text {
                  text-align: right;
-                 font-size: 30px;
+                 font-size: 35px;
              }
 
             #koala-image {
@@ -103,7 +103,7 @@
             </div><br>
             <img src="./コアラ.png" alt="koala" id="koala-image">
         </div>
-        <p style="font-size: 35px">💡tips</p>
+        <p style="font-size: 45px">💡tips</p>
         <div class="tips-section">
             <p>素晴らしいです結果です！この調子を継続していきましょう！</p>
         </div>
@@ -126,14 +126,14 @@
 
             // スコアが存在するかチェック
             if (ukkari !== null) {
-                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore;
+                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore + '/50';
             } else {
                 document.getElementById('ukkariDisplay').textContent = 'うっかり度のスコアは保存されていません。';
             }
 
             // こまり度を表示
             if (komarido !== null) {
-                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore;
+                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore + '/50';
             } else {
                 document.getElementById('komaridoDisplay').textContent = 'こまり度のスコアは保存されていません。';
             }
