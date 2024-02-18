@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>結果画面(ダチョウ)</title>
+        <title>結果画面(ふくろう)</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="common_form.css">
         <style>
@@ -22,8 +22,8 @@
 
             .speech-bubble {
                 position: absolute;
-                top: 150px; /* 吹き出しの位置調整 */
-                left: 680px;
+                top: 100px; /* 吹き出しの位置調整 */
+                left: 820px;
                 width: 300px;
                 padding: 10px;
                 background: #f0f0f0;
@@ -43,7 +43,6 @@
 
             .result{
                 font-weight: bold;
-                font-size: 20px;
             }
 
             .header-text {
@@ -54,14 +53,14 @@
             }
 
             /* Tipsセクションのスタイル */
-             .tips-section {
+            .tips-section {
                 border: 2px solid #333; /* 枠線を追加 */
                 padding: 10px; /* 内側の余白を追加 */
                 margin: 20px; /* 外側の余白を追加 */
                 font-weight: bold;
             }
 
-            body::before {
+           body::before {
                 content: "";
                 position: fixed; /* 固定位置にする */
                 top: 0;
@@ -75,32 +74,11 @@
                 z-index: -1;
             }
 
-            .bottom-text {
-                font-size: 20px;
-                position: fixed; /* 要素を固定位置に設定 */
-                right: 160px; /* 右側の余白 */
-                bottom: 100px; /* 下側の余白 */
-                margin-right: 10px; /* 右側の追加の余白 */
-                margin-bottom: 10px; /* 下側の追加の余白 */
-            }
-            .container1 {
+             .container1 {
                 display: flex;
                 justify-content: center; /* 水平方向の中央寄せ */
             }
-
-            .speech-bubble {
-                position: absolute;
-                top: 150px; /* 吹き出しの位置調整 */
-                left: 480px;
-                width: 300px;
-                padding: 10px;
-                background: #f0f0f0;
-                border-radius: 10px;
-                border: 2px solid #333;
-            }
             
-           
-
         </style>
     </head>
     <body>
