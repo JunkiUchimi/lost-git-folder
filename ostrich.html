@@ -54,16 +54,11 @@
             }
 
             /* Tipsセクションのスタイル */
-            .tips-section {
-                width: 250px;
+             .tips-section {
                 border: 2px solid #333; /* 枠線を追加 */
                 padding: 10px; /* 内側の余白を追加 */
                 margin: 20px; /* 外側の余白を追加 */
-                margin-bottom: 20px;
                 font-weight: bold;
-                font-size: 18px;
-                box-sizing: border-box; /* パディングとボーダーを含めた幅の計算方法を指定 */
-                word-wrap: break-word; /* 長い単語があっても折り返して表示 */
             }
 
             body::before {
@@ -104,27 +99,7 @@
                 border: 2px solid #333;
             }
             
-            @media (max-width: 600px) {
-                body, h2, p, a, label {
-                    font-size: 40px; /* スマートフォン表示用の基本的なフォントサイズ */
-                }
-
-                .header-text h2 {
-                    font-size: 30px; /* 見出しのフォントサイズをさらに大きく */
-                }
-
-                .speech-bubble, .result, .tips-section, .bottom-text {
-                    font-size: 30px; /* 吹き出し、結果表示、Tipsセクション、ページ下部のテキストのフォントサイズ */
-                }
-
-                .speech-bubble {
-                    position: relative; /* 絶対位置指定から相対位置指定へ変更 */
-                    top: 0;
-                    left: 0;
-                }
-
-                
-            }
+           
 
         </style>
     </head>
