@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>結果画面(ダチョウ)</title>
+        <title>結果画面(ふくろう)</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="common_form.css">
         <style>
@@ -22,8 +22,8 @@
 
             .speech-bubble {
                 position: absolute;
-                top: 150px; /* 吹き出しの位置調整 */
-                left: 680px;
+                top: 100px; /* 吹き出しの位置調整 */
+                left: 820px;
                 width: 300px;
                 padding: 10px;
                 background: #f0f0f0;
@@ -43,7 +43,6 @@
 
             .result{
                 font-weight: bold;
-                font-size: 20px;
             }
 
             .header-text {
@@ -54,11 +53,16 @@
             }
 
             /* Tipsセクションのスタイル */
-             .tips-section {
+            .tips-section {
                 border: 2px solid #333; /* 枠線を追加 */
                 padding: 10px; /* 内側の余白を追加 */
                 margin: 20px; /* 外側の余白を追加 */
                 font-weight: bold;
+            }
+
+            .container1 {
+                display: flex;
+                justify-content: center; /* 水平方向の中央寄せ */
             }
 
             body::before {
@@ -74,59 +78,34 @@
                 opacity: 0.5;
                 z-index: -1;
             }
-
-            .bottom-text {
-                font-size: 20px;
-                position: fixed; /* 要素を固定位置に設定 */
-                right: 160px; /* 右側の余白 */
-                bottom: 100px; /* 下側の余白 */
-                margin-right: 10px; /* 右側の追加の余白 */
-                margin-bottom: 10px; /* 下側の追加の余白 */
-            }
-            .container1 {
-                display: flex;
-                justify-content: center; /* 水平方向の中央寄せ */
-            }
-
-            .speech-bubble {
-                position: absolute;
-                top: 150px; /* 吹き出しの位置調整 */
-                left: 480px;
-                width: 300px;
-                padding: 10px;
-                background: #f0f0f0;
-                border-radius: 10px;
-                border: 2px solid #333;
-            }
             
-           
 
         </style>
     </head>
     <body>
         <div class="header-text">
-            <h2>あなたはダチョウです！</h2><br><br><br><br><br><br>
+            <h2>あなたはふくろうです！</h2>
         </div>
-
-            <div class="speech-bubble">ダチョウはとっても忘れやすい動物で、群れと群れがぶつかるとメンバーが自分がどっちの群れにいたかわからなくなってしまうんだ。でも、強靭（きょうじん）な身体能力を持っていることでも知られているよ！</div>
         <div class="container1">
             <div class="result">  
                 <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
                 <div id="actionDisplay">行動点のスコアがここに表示されます。</div>
                 <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
-            </div><br>
-            <img src="./ostrich.png" alt="ostrich" id="ostrich-image">
-            <p style="font-size: 20px">💡tips</p>
-            <div class="tips-section">
-                <p>それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
             </div>
-            </div>
-            <p class="bottom-text">
-                <a href="https://muramutu.wixsite.com/lost-item-inspection" target="_blank">ホームに戻る</a>
-            </p>
+          
+            <img src="./フクロウ.png" alt="ダチョウ" id="ostrich-image">
+            
+            <div class="speech-bubble">フクロウは、古代ギリシャより賢明と叡智を象徴する鳥とされているよ。これはローマ神話の知恵の女神の使いがフクロウだったから。実際のフクロウも、助けてくれたヒトに恩返しをするなど記憶力が高いと言われているよ。</div>
+     
         </div>
-  </body>
+        <p style="font-size: 20px">💡tips</p>
+        <div class="tips-section">
+            
+            <p>それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
+        </div>
+
+    </body>
     <script>
         window.onload = function() {
             // ローカルストレージから数値を個別に取得
