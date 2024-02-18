@@ -77,13 +77,20 @@
                 padding: 0 10px; /* カラム内のコンテンツに余白を設ける */
             }
 
-		input[type="text"], select {
+	    input[type="text"] {
+		width: 80%;
+	        height: 50px; /* 縦の高さを増やす */
+	        font-size: 25px; /* 中の文字のサイズを大きくする */
+	        padding: 10px; /* 内側の余白を追加して視覚的に大きく見せる */
+	        cursor: pointer;
+	    }
 		
+	    select {
 		height: 50px; /* 縦の高さを増やす */
-		font-size: 25px; /* 中の文字のサイズを大きくする */
-		padding: 10px; /* 内側の余白を追加して視覚的に大きく見せる */
-		cursor: pointer;
-		}
+	        font-size: 30px; /* 中の文字のサイズを大きくする */
+	        padding: 10px; /* 内側の余白を追加して視覚的に大きく見せる */
+	        cursor: pointer;
+	    }
 
             #textBox {
                 width: 100%; /* テキストボックスの幅を親要素の100%に設定 */
