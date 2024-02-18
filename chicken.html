@@ -18,13 +18,13 @@
             .speech-bubble {
                 position: absolute;
                 top: 200px; /* 吹き出しの位置調整 */
-                left: 500px;
-                width: 400px;
+                left: 420px;
+                width: 500px;
                 padding: 10px;
                 background: #f0f0f0;
                 border-radius: 10px;
                 border: 2px solid #333;
-                font-size: 25px;
+                font-size: 30px;
             }
 
             .speech-bubble::after {
@@ -39,7 +39,7 @@
 
             .result{
                 font-weight: bold;
-                font-size: 37px;
+                font-size: 34px;
             }
 
             .header-text {
@@ -55,7 +55,7 @@
                 padding: 10px; /* 内側の余白を追加 */
                 margin: 20px; /* 外側の余白を追加 */
                 font-weight: bold;
-                font-size: 25px;
+                font-size: 30px;
             }
 
            body::before {
@@ -78,7 +78,7 @@
             }
              .bottom-text {
                  text-align: right;
-                 font-size: 30px;
+                 font-size: 35px;
              }
 
             #chicken-image {
@@ -126,14 +126,14 @@
 
             // スコアが存在するかチェック
             if (ukkari !== null) {
-                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore;
+                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore + '/50';
             } else {
                 document.getElementById('ukkariDisplay').textContent = 'うっかり度のスコアは保存されていません。';
             }
 
             // こまり度を表示
             if (komarido !== null) {
-                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore;
+                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore + '/50';
             } else {
                 document.getElementById('komaridoDisplay').textContent = 'こまり度のスコアは保存されていません。';
             }
