@@ -15,20 +15,16 @@
                 margin-bottom: 10px; /* 下部にマージンを追加 */
             }
 
-            #ostrich-image {
-                width: 300px; /* 画像のサイズ調整 */
-                height: auto;
-            }
-
             .speech-bubble {
                 position: absolute;
-                top: 100px; /* 吹き出しの位置調整 */
-                left: 820px;
-                width: 300px;
+                top: 200px; /* 吹き出しの位置調整 */
+                left: 500px;
+                width: 400px;
                 padding: 10px;
                 background: #f0f0f0;
                 border-radius: 10px;
                 border: 2px solid #333;
+                font-size: 25px;
             }
 
             .speech-bubble::after {
@@ -43,6 +39,7 @@
 
             .result{
                 font-weight: bold;
+                font-size: 37px;
             }
 
             .header-text {
@@ -58,11 +55,10 @@
                 padding: 10px; /* 内側の余白を追加 */
                 margin: 20px; /* 外側の余白を追加 */
                 font-weight: bold;
+                font-size: 25px;
             }
 
-            
-
-            body::before {
+           body::before {
                 content: "";
                 position: fixed; /* 固定位置にする */
                 top: 0;
@@ -75,34 +71,46 @@
                 opacity: 0.5;
                 z-index: -1;
             }
-            
 
+             .container1 {
+                display: flex;
+                justify-content: center; /* 水平方向の中央寄せ */
+            }
+             .bottom-text {
+                 text-align: right;
+                 font-size: 30px;
+             }
+
+            #koala-image {
+                width: 500px; /* 幅を500pxに設定 */
+                height: auto; /* 高さを自動調整してアスペクト比を維持 */
+            }
+            
         </style>
     </head>
     <body>
         <div class="header-text">
-            <h2>あなたはコアラです！</h2>
+            <h2>あなたはコアラです！</h2><br><br><br><br><br><br><br><br><br><br>
         </div>
-        <div class="container">
+
+            <div class="speech-bubble">哺乳類の中で、体重に対する脳の重さが最も小さいと言われるコアラ。コアラの消化器官はユーカリの葉の毒素を分解できる機能が備わっていて、ユーカリはコアラ独占の食べ物だよ。でも消化に時間がかかるので長時間寝る必要があるよ…。</div>
+        <div class="container1">
             <div class="result">  
-                <div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
+                <br><br><br><div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
                 <div id="actionDisplay">行動点のスコアがここに表示されます。</div>
                 <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
-            </div>
-          
-            <img src="./コアラ.png" alt="コアラ" id="ostrich-image">
-            
-            <div class="speech-bubble">哺乳類の中で、体重に対する脳の重さが最も小さいと言われるコアラ。コアラの消化器官はユーカリの葉の毒素を分解できる機能が備わっていて、ユーカリはコアラ独占の食べ物だよ。でも消化に時間がかかるので長時間寝る必要があるよ…。</div>
-     
+            </div><br>
+            <img src="./コアラ.png" alt="koala" id="koala-image">
         </div>
-        <p style="font-size: 20px">💡tips</p>
+        <p style="font-size: 35px">💡tips</p>
         <div class="tips-section">
-            
-            <p>それなりにあるを選んでも、対策がバッチリだったら最高ランクを狙えるよ！</p>
+            <p>素晴らしいです結果です！この調子を継続していきましょう！</p>
         </div>
-
-    </body>
+        <p class="bottom-text">
+            <a href="https://muramutu.wixsite.com/lost-item-inspection" target="_blank">ホームに戻る</a>
+        </p>
+  </body>
     <script>
         window.onload = function() {
             // ローカルストレージから数値を個別に取得
