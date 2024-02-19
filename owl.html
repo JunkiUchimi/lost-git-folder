@@ -124,7 +124,7 @@
             var ukkariScore = parseInt(ukkari, 10);
             var komaridoScore = parseInt(komarido, 10);
             var actionScore = parseInt(action, 10);  // ここを修正
-            var totalScore = ukkariScore + komaridoScore + actionScore;  // 総合スコアの計算を修正
+            var totalScore = ukkariScore + komaridoScore - actionScore;  // 総合スコアの計算を修正
 
             // スコアが存在するかチェック
             if (ukkari !== null) {
@@ -142,7 +142,7 @@
 
             // 行動点を表示
             if (action !== null) {
-                document.getElementById('actionDisplay').textContent = '行動点(加点): ' + actionScore;
+                document.getElementById('actionDisplay').textContent = '行動点(引く分): ' + actionScore;
             } else {
                 document.getElementById('actionDisplay').textContent = '行動点のスコアは保存されていません。';
             }
