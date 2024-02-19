@@ -126,7 +126,7 @@
             var ukkariScore = parseInt(ukkari, 10);
             var komaridoScore = parseInt(komarido, 10);
             var actionScore = parseInt(action, 10);  // ここを修正
-            var totalScore = ukkariScore + komaridoScore + actionScore;  // 総合スコアの計算を修正
+            var totalScore = ukkariScore + komaridoScore - actionScore;  // 総合スコアの計算を修正
 
             // スコアが存在するかチェック
             if (ukkari !== null) {
