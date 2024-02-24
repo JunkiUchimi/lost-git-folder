@@ -105,11 +105,8 @@
                 <br><br><br><div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
                 <div id="actionDisplay">行動点のスコアがここに表示されます。</div>
-                <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
-
-                <span id="infoIcon" style="cursor:pointer;">　　　　　ⓘ</span>
-               
-                
+                <div id="totalScoreDisplay" style="display: inline-block;">総合スコアがここに表示されます。</div>
+                <span id="infoIcon" style="cursor: pointer; display: inline-block;">ⓘ</span>
 
                 <!-- Modal Popup -->
                 <div id="myModal" class="modal">
@@ -174,7 +171,7 @@
 
             // 行動点を表示
             if (action !== null) {
-                document.getElementById('actionDisplay').textContent = '行動点(加点): ' + actionScore;
+                document.getElementById('actionDisplay').textContent = '行動点(引く分): ' + actionScore;
             } else {
                 document.getElementById('actionDisplay').textContent = '行動点のスコアは保存されていません。';
             }
