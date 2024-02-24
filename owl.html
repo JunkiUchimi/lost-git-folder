@@ -17,14 +17,14 @@
 
             .speech-bubble {
                 position: absolute;
-                top: 290px; /* 吹き出しの位置調整 */
-                left: 420px;
-                width: 500px;
+                top: 200px; /* 吹き出しの位置調整 */
+                left: 500px;
+                width: 400px;
                 padding: 10px;
                 background: #f0f0f0;
                 border-radius: 10px;
                 border: 2px solid #333;
-                font-size: 30px;
+                font-size: 25px;
             }
 
             .speech-bubble::after {
@@ -39,14 +39,14 @@
 
             .result{
                 font-weight: bold;
-                font-size: 34px;
+                font-size: 37px;
             }
 
             .header-text {
                 text-align: center; /* 中央揃え */
                 margin-bottom: 20px; /* 下部に余白を追加 */
                 font-weight: bold;
-                font-size: 40px;
+                font-size: 30px;
             }
 
             /* Tipsセクションのスタイル */
@@ -55,7 +55,7 @@
                 padding: 10px; /* 内側の余白を追加 */
                 margin: 20px; /* 外側の余白を追加 */
                 font-weight: bold;
-                font-size: 30px;
+                font-size: 25px;
             }
 
            body::before {
@@ -78,22 +78,26 @@
             }
              .bottom-text {
                  text-align: right;
-                 font-size: 35px;
+                 font-size: 30px;
              }
 
             #owl-image {
                 width: 500px; /* 幅を500pxに設定 */
                 height: auto; /* 高さを自動調整してアスペクト比を維持 */
             }
+
+            .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4); }
+                .modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; }
+                .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+                .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
+
             
         </style>
     </head>
     <body>
         <div class="header-text">
-            <h2>あなたはフクロウです！</h2>
+            <h2>あなたはフクロウです！</h2><br><br><br><br><br><br><br><br><br><br>
         </div>
-        <img src="./動物一覧.png" alt="動物一覧" id="animals" style="width: 50%; position: absolute; top: 115px; right: 0;">
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
             <div class="speech-bubble">フクロウは、古代ギリシャより賢明と叡智を象徴する鳥とされているよ。これはローマ神話の知恵の女神の使いがフクロウだったから。実際のフクロウも、助けてくれたヒトに恩返しをするなど記憶力が高いと言われているよ。</div>
         <div class="container1">
@@ -102,15 +106,43 @@
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
                 <div id="actionDisplay">行動点のスコアがここに表示されます。</div>
                 <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
+
+                <span id="infoIcon" style="cursor:pointer;">　　　　　ⓘ</span>
+               
+                
+
+                <!-- Modal Popup -->
+                <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>「忘れ物検定」の判定基準について​<br>
+                        うっかり度診断（50点満点）<br>
+                        ：うっかり度の高さを診断​
+                        困り度診断（50点満点）<br>
+                        ：困り度の高さを診断​<br>
+                        行動診断（±25点）<br>
+                        ：忘れ物への対策行動に応じたスコアの増減​<br>
+                        【総合判定】（うっかり度＋困り度±行動点）​<br>
+                        ~38：フクロウ<br>
+                        39~44：サル<br>
+                        45~50：イヌ<br>
+                        51~56：ウマ<br>
+                        57~62：リス<br>
+                        63~68：ニワト<br>​
+                        69~74：コアラ<br>
+                        75~：ダチョウ</p>
+                </div>
+                </div>
+
             </div><br>
             <img src="./フクロウ.png" alt="owl" id="owl-image">
         </div>
-        <p style="font-size: 45px">💡tips</p>
+        <p style="font-size: 35px">💡tips</p>
         <div class="tips-section">
             <p>素晴らしいです結果です！この調子を継続していきましょう！</p>
         </div>
         <p class="bottom-text">
-<!--             <a href="https://muramutu.wixsite.com/lost-item-inspection" target="_blank">ホームに戻る</a> -->
+            <a href="https://muramutu.wixsite.com/lost-item-inspection" target="_blank">ホームに戻る</a>
         </p>
   </body>
     <script>
@@ -124,25 +156,25 @@
             var ukkariScore = parseInt(ukkari, 10);
             var komaridoScore = parseInt(komarido, 10);
             var actionScore = parseInt(action, 10);  // ここを修正
-            var totalScore = ukkariScore + komaridoScore - actionScore;  // 総合スコアの計算を修正
+            var totalScore = ukkariScore + komaridoScore + actionScore;  // 総合スコアの計算を修正
 
             // スコアが存在するかチェック
             if (ukkari !== null) {
-                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore + '/50';
+                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore;
             } else {
                 document.getElementById('ukkariDisplay').textContent = 'うっかり度のスコアは保存されていません。';
             }
 
             // こまり度を表示
             if (komarido !== null) {
-                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore + '/50';
+                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore;
             } else {
                 document.getElementById('komaridoDisplay').textContent = 'こまり度のスコアは保存されていません。';
             }
 
             // 行動点を表示
             if (action !== null) {
-                document.getElementById('actionDisplay').textContent = '行動点(引く分): ' + actionScore;
+                document.getElementById('actionDisplay').textContent = '行動点(加点): ' + actionScore;
             } else {
                 document.getElementById('actionDisplay').textContent = '行動点のスコアは保存されていません。';
             }
@@ -150,6 +182,15 @@
             // 総合スコアを表示
             document.getElementById('totalScoreDisplay').textContent = '総合スコア: ' + totalScore;
         };
+
+
+        var modal = document.getElementById("myModal");
+            var btn = document.getElementById("infoIcon");
+            var span = document.getElementsByClassName("close")[0];
+
+            btn.onclick = function() { modal.style.display = "block"; }
+            span.onclick = function() { modal.style.display = "none"; }
+            window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
         
     </script>
 </html>
