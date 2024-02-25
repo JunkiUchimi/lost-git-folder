@@ -101,7 +101,31 @@
                 <br><br><br><div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
                 <div id="actionDisplay">行動点のスコアがここに表示されます。</div>
-                <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
+                <div id="totalScoreDisplay" style="display: inline-block;">総合スコアがここに表示されます。</div>
+                <span id="infoIcon" style="cursor: pointer; display: inline-block; color: blue;">ⓘ</span>
+
+                <!-- Modal Popup -->
+                <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>「忘れ物検定」の判定基準について​<br>
+                        うっかり度診断（50点満点）<br>
+                        ：うっかり度の高さを診断​
+                        困り度診断（50点満点）<br>
+                        ：困り度の高さを診断​<br>
+                        行動診断（±25点）<br>
+                        ：忘れ物への対策行動に応じたスコアの増減​<br>
+                        【総合判定】（うっかり度＋困り度±行動点）​<br>
+                        ~38：フクロウ<br>
+                        39~44：サル<br>
+                        45~50：イヌ<br>
+                        51~56：ウマ<br>
+                        57~62：リス<br>
+                        63~68：ニワト<br>​
+                        69~74：コアラ<br>
+                        75~：ダチョウ</p>
+                </div>
+                </div>
             </div><br>
             <img src="./コアラ.png" alt="koala" id="koala-image">
         </div>
@@ -150,6 +174,14 @@
             // 総合スコアを表示
             document.getElementById('totalScoreDisplay').textContent = '総合スコア: ' + totalScore;
         };
+
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("infoIcon");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() { modal.style.display = "block"; }
+        span.onclick = function() { modal.style.display = "none"; }
+        window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
         
     </script>
 </html>
