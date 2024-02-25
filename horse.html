@@ -148,18 +148,18 @@
             var ukkariScore = parseInt(ukkari, 10);
             var komaridoScore = parseInt(komarido, 10);
             var actionScore = parseInt(action, 10);  // ここを修正
-            var totalScore = ukkariScore + komaridoScore - actionScore;  // 総合スコアの計算を修正
+            var totalScore = ukkariScore + komaridoScore + actionScore;  // 総合スコアの計算を修正
 
             // スコアが存在するかチェック
             if (ukkari !== null) {
-                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore + '/50';
+                document.getElementById('ukkariDisplay').textContent = 'うっかり度: ' + ukkariScore;
             } else {
                 document.getElementById('ukkariDisplay').textContent = 'うっかり度のスコアは保存されていません。';
             }
 
             // こまり度を表示
             if (komarido !== null) {
-                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore + '/50';
+                document.getElementById('komaridoDisplay').textContent = 'こまり度: ' + komaridoScore;
             } else {
                 document.getElementById('komaridoDisplay').textContent = 'こまり度のスコアは保存されていません。';
             }
@@ -175,7 +175,8 @@
             document.getElementById('totalScoreDisplay').textContent = '総合スコア: ' + totalScore;
         };
 
-         var modal = document.getElementById("myModal");
+
+        var modal = document.getElementById("myModal");
             var btn = document.getElementById("infoIcon");
             var span = document.getElementsByClassName("close")[0];
 
