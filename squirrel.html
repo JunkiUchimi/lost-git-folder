@@ -103,7 +103,8 @@
                 <br><br><br><div id="ukkariDisplay">うっかり度のスコアがここに表示されます。</div>
                 <div id="komaridoDisplay">こまり度のスコアがここに表示されます。</div>
                 <div id="actionDisplay">行動点のスコアがここに表示されます。</div>
-                <div id="totalScoreDisplay">総合スコアがここに表示されます。</div>
+                <div id="totalScoreDisplay" style="display: inline-block;">総合スコアがここに表示されます。</div>
+                <span id="infoIcon" style="cursor: pointer; display: inline-block;">ⓘ</span>
             </div><br>
             <img src="./リス.png" alt="squirrel" id="squirrel-image">
         </div>
@@ -116,6 +117,15 @@
         </p>
   </body>
     <script>
+        document.getElementById('infoIcon').addEventListener('click', function() {
+                var explanation = document.getElementById('scoreExplanation');
+                if (explanation.style.display === 'none') {
+                    explanation.style.display = 'block';
+                } else {
+                    explanation.style.display = 'none';
+                }
+            });
+        
         window.onload = function() {
             // ローカルストレージから数値を個別に取得
             var ukkari = localStorage.getItem('ukkariScore');
@@ -152,6 +162,7 @@
             // 総合スコアを表示
             document.getElementById('totalScoreDisplay').textContent = '総合スコア: ' + totalScore;
         };
+        
         
     </script>
 </html>
